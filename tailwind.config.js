@@ -7,13 +7,29 @@ module.exports = {
   ],
   theme: {
     colors: {
-      "ps-pure-black": "#000000",
-      "ps-pure-white": "#FFFFFF",
-      "ps-light-grey": "#DFDFDF",
+      black: "#000000",
+      white: "#FFFFFF",
+      "light-grey": "#DFDFDF",
+    },
+    fontSize: {
+      xs: ["12px", { lineHeight: "16px", letterSpacing: "2px" }],
+      sm: ["15px", { lineHeight: "25px", letterSpacing: "0px" }],
+      lg: ["18px", { lineHeight: "25px", letterSpacing: "0px" }],
+      xl: ["24px", { lineHeight: "25px", letterSpacing: "0px" }],
+      "2xl": ["32px", { lineHeight: "40px", letterSpacing: "3.33px" }],
+      "3xl": ["40px", { lineHeight: "48px", letterSpacing: "4.17px" }],
+    },
+    fontWeight: {
+      normal: "400",
+      bold: "700",
+    },
+    screens: {
+      tablet: "768px",
+      desktop: "1440px",
     },
     extend: {
       backgroundImage: {
-        "ps-accent":
+        accent:
           "linear-gradient(26.57deg, #FFC593 0.42%, #BC7198 43.46%, #5A77FF 83.33%);",
       },
     },
