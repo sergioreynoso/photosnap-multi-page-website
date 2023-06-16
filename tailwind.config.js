@@ -6,11 +6,6 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      black: "#000000",
-      white: "#FFFFFF",
-      "light-grey": "#DFDFDF",
-    },
     fontSize: {
       xs: ["12px", { lineHeight: "16px", letterSpacing: "2px" }],
       sm: ["15px", { lineHeight: "25px", letterSpacing: "0px" }],
@@ -28,8 +23,15 @@ module.exports = {
       desktop: "1440px",
     },
     extend: {
+      colors: {
+        brand: {
+          black: "#000000",
+          white: "#FFFFFF",
+          grey: "#DFDFDF",
+        },
+      },
       backgroundImage: {
-        accent:
+        "brand-accent":
           "linear-gradient(26.57deg, #FFC593 0.42%, #BC7198 43.46%, #5A77FF 83.33%);",
       },
     },
