@@ -15,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={dmSans.className}>{children}</body>
+      <body
+        className={`${dmSans.className} text-black dark:text-white bg-white dark:bg-black font-normal text-sm`}>
+        {children}
+      </body>
     </html>
   );
 }

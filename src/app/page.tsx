@@ -26,9 +26,6 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <div className=" p-8 bg-blue-600 dark:bg-red-600 bg-ps-accent text-ps-pure-black font-medium">
-        BOX
-      </div>
     </main>
   );
 }
