@@ -23,6 +23,12 @@ module.exports = {
       desktop: "1440px",
     },
     extend: {
+      height: {
+        17: "72px",
+      },
+      maxWidth: {
+        "8xl": "1440px",
+      },
       colors: {
         brand: {
           black: "#000000",
