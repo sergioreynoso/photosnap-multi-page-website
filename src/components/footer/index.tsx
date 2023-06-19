@@ -21,7 +21,7 @@ export default function Footer() {
 
   const GetAnInviteBtn = () => <Button type="secondary">Get an invite</Button>;
   const CopyRight = () => (
-    <div className="flex gap-4">
+    <div className="flex flex-col gap-2 tablet:flex-row tablet:gap-4">
       <Link href="/design-system" className="opacity-50 hover:opacity-60">
         Design System
       </Link>
@@ -31,7 +31,7 @@ export default function Footer() {
 
   return (
     <footer className="h-[540px] w-full bg-brand-black px-6 py-14 text-brand-white tablet:h-[284px] tablet:px-10 tablet:py-16">
-      <div className="mx-auto w-full max-w-[1110px]">
+      <div className="mx-auto h-full w-full max-w-[1110px]">
         <div className="flex  flex-col items-center justify-between gap-8 tablet:hidden">
           <Logo />
           <SocialIcons />
