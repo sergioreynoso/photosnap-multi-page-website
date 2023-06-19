@@ -1,5 +1,4 @@
 import Link from "next/link";
-import ArrowIcon from "@/public/arrow_icon.svg";
 
 type Props = {
   type?: "primary" | "secondary";
@@ -18,7 +17,7 @@ export default function Button<T extends React.ElementType>({
         href={href}
         className="group flex h-10 min-w-[158px] max-w-[270px] transform items-center justify-center gap-4 text-center text-xs font-bold uppercase tracking-[2px] underline-offset-2 transition hover:underline">
         {children}
-        <ArrowIcon className="transform transition group-hover:translate-x-1 dark:fill-brand-white" />
+        <ArrowIcon className="transform transition group-hover:translate-x-1 " />
       </Link>
     );
 
@@ -28,5 +27,22 @@ export default function Button<T extends React.ElementType>({
       className="flex h-10 min-w-[158px] max-w-[270px] transform items-center justify-center bg-brand-black text-center text-xs font-bold uppercase tracking-[2px] text-brand-white transition-colors hover:bg-brand-grey hover:text-brand-black dark:bg-brand-white dark:text-brand-black">
       {children}
     </Link>
+  );
+}
+
+function ArrowIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      width={42}
+      height={14}
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M40.221 7.5H0v-1h40.221l-5.146-5.146.707-.708L41.635 6.5h.229v.229l.271.271-.271.271V7.5h-.229l-5.853 5.854-.707-.707L40.22 7.5z"
+      />
+    </svg>
   );
 }
