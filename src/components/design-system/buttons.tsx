@@ -10,12 +10,12 @@ export default function Buttons() {
       </h2>
       <div className="flex flex-col gap-12 tablet:flex-row tablet:gap-24">
         <div className="flex items-center gap-8">
-          <span className="opacity-50">Primary</span>
           <Button type="primary">button 1</Button>
+          <span className="opacity-50">Primary</span>
         </div>
         <div className="flex items-center gap-8">
-          <span className="opacity-50">Secondary</span>
           <Button type="secondary">button 1</Button>
+          <span className="opacity-50">Secondary</span>
         </div>
       </div>
     </div>
