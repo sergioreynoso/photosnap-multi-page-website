@@ -3,7 +3,12 @@ import Header from "@/src/components/header";
 import "./globals.css";
 import { DM_Sans } from "next/font/google";
 
-const dmSans = DM_Sans({ weight: ["400", "500", "700"], subsets: ["latin"] });
+const dmSans = DM_Sans({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-dmSans",
+});
 
 export const metadata = {
   title: "Photosnap Multi Page Website",
