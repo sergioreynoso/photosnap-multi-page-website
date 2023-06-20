@@ -18,15 +18,11 @@ export default function SocialIcons() {
         <Image
           src={FacebookWhite}
           alt="Facebook Logo"
-          height={20}
-          width={20}
           className="absolute group-hover:hidden"
         />
         <Image
           src={FacebookColor}
           alt="Facebook Logo"
-          height={20}
-          width={20}
           className="hidden group-hover:block"
         />
       </Link>
@@ -34,15 +30,11 @@ export default function SocialIcons() {
         <Image
           src={YoutubeWhite}
           alt="Youtube Logo"
-          height={20}
-          width={20}
           className="absolute group-hover:hidden"
         />
         <Image
           src={YoutubeColor}
           alt="Youtube Logo"
-          height={20}
-          width={20}
           className="hidden group-hover:block"
         />
       </Link>
@@ -50,15 +42,11 @@ export default function SocialIcons() {
         <Image
           src={TwitterWhite}
           alt="Twitter Logo"
-          height={20}
-          width={20}
           className="absolute group-hover:hidden"
         />
         <Image
           src={TwitterColor}
           alt="Twitter Logo"
-          height={20}
-          width={20}
           className="hidden group-hover:block"
         />
       </Link>
@@ -66,15 +54,11 @@ export default function SocialIcons() {
         <Image
           src={PinterestWhite}
           alt="Pinterest Logo"
-          height={20}
-          width={20}
           className="absolute group-hover:hidden"
         />
         <Image
           src={PinterestColor}
           alt="Pinterest Logo"
-          height={20}
-          width={20}
           className="hidden group-hover:block"
         />
       </Link>
@@ -82,15 +66,11 @@ export default function SocialIcons() {
         <Image
           src={InstagramWhite}
           alt="Instagram Logo"
-          height={20}
-          width={20}
           className="absolute group-hover:hidden"
         />
         <Image
           src={InstagramColor}
           alt="Instagram Logo"
-          height={20}
-          width={20}
           className="hidden group-hover:block"
         />
       </Link>
