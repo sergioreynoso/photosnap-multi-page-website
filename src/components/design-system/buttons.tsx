@@ -1,6 +1,5 @@
-import Button from "../button";
-import TextSvg from "@/public/test_svg.svg";
-import Image from "next/image";
+import PrimaryButton from "../buttons/primary-button";
+import ArrowButton from "../buttons/arrow-button";
 
 export default function Buttons() {
   return (
@@ -10,11 +9,11 @@ export default function Buttons() {
       </h2>
       <div className="flex flex-col gap-12 tablet:flex-row tablet:gap-24">
         <div className="flex items-center gap-8">
-          <Button type="primary">button 1</Button>
+          <PrimaryButton href="#">Button</PrimaryButton>
           <span className="opacity-50">Primary</span>
         </div>
         <div className="flex items-center gap-8">
-          <Button type="secondary">button 1</Button>
+          <ArrowButton href="#">Button</ArrowButton>
           <span className="opacity-50">Secondary</span>
         </div>
       </div>
