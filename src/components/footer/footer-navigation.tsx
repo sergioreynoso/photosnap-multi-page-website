@@ -16,13 +16,10 @@ export default function FooterNavigation() {
   return (
     <NavigationMenu.Root className="text-center text-xs font-bold uppercase text-brand-white">
       <NavigationMenu.List className="flex flex-col gap-5  tablet:flex-row desktop:h-full desktop:flex-col desktop:items-start desktop:gap-8">
-        <Item href="#" label="Home" />
-        <Item href="#" label="Stories" />
-        <Item href="#" label="Features" />
-        <Item href="#" label="Pricing" />
-        {/* <NavigationMenu.Indicator>
-          <span className="block h-1 w-3 bg-red-500"></span>
-        </NavigationMenu.Indicator> */}
+        <Item href="/" label="Home" />
+        <Item href="/stories" label="Stories" />
+        <Item href="/features" label="Features" />
+        <Item href="/pricing" label="Pricing" />
       </NavigationMenu.List>
     </NavigationMenu.Root>
   );
