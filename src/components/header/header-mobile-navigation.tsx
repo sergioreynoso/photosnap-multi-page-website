@@ -8,7 +8,7 @@ import * as Separator from "@radix-ui/react-separator";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import * as Dialog from "@radix-ui/react-dialog";
 
-import HamburgerBtn from "@components/header/hamburger-button";
+import HamburgerBtn from "@components/buttons/hamburger-button";
 import PrimaryButton from "@components/buttons/primary-button";
 
 export default function HeaderMobileNavigation() {
