@@ -1,4 +1,4 @@
-import Logo from "@/public/photosnap_logo_white.png";
+import Logo from "@/public/logo/photosnap_logo_white.png";
 import Image from "next/image";
 import Link from "next/link";
 import HeaderMobileNavigation from "./header-mobile-navigation";
@@ -7,7 +7,7 @@ import PrimaryButton from "../buttons/primary-button";
 
 export default function Header() {
   return (
-    <header className="flex h-17 max-w-full justify-center bg-brand-white px-6 tablet:px-10">
+    <header className="fixed left-0 right-0 z-10 flex h-17 max-w-full justify-center bg-brand-white px-6 tablet:px-10">
       <div className="flex w-full max-w-[1110px] items-center justify-between">
         <Link href="/">
           <Image src={Logo} alt="logo" width={170} height={16} priority />
