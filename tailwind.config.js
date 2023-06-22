@@ -34,6 +34,9 @@ module.exports = {
       maxWidth: {
         "8xl": "1440px",
       },
+      padding: {
+        18: "72px",
+      },
       colors: {
         brand: {
           black: "#000000",
@@ -43,7 +46,7 @@ module.exports = {
       },
       backgroundImage: {
         "brand-accent":
-          "linear-gradient(26.57deg, #FFC593 0.42%, #BC7198 43.46%, #5A77FF 83.33%);",
+          "linear-gradient(26deg, #FFC593 0.42%, #BC7198 43.46%, #5A77FF 83.33%);",
       },
       keyframes: {
         overlayShow: {
