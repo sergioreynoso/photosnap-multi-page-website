@@ -38,7 +38,7 @@ export default function PageHeroSplit({
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="relative flex h-[420px] max-w-[610px] flex-[1_0_64.5%] flex-col justify-center gap-4 pl-8 pr-6 tablet:h-[650px] tablet:px-14 desktop:flex-[1_0_42%]">
+      <div className="relative flex h-[420px] max-w-[610px] flex-[1_0_64.5%] flex-col items-start justify-center gap-4 pl-8 pr-6 tablet:h-[650px] tablet:px-14 desktop:flex-[1_0_42%]">
         <span className="absolute top-0 block h-[6px] w-32 bg-brand-accent"></span>
         <h1 className="text-2xl uppercase tablet:text-3xl">{title}</h1>
         <p className="text-sm opacity-60">{body}</p>
