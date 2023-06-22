@@ -1,5 +1,5 @@
 "use client";
-import LogoIMG from "@/public/photosnap_logo_black.png";
+import LogoIMG from "@/public/logo/photosnap_logo_black.png";
 import Image from "next/image";
 import SocialIcons from "./social-icons";
 import FooterNavigation from "./footer-navigation";
