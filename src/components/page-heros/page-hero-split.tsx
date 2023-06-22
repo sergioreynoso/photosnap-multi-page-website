@@ -14,12 +14,14 @@ type Props = {
   data: Data;
   bgColor?: "white" | "black";
   textPosition?: "left" | "right";
+  accent?: boolean;
 };
 // TODO: Add alt text to images
 export default function PageHeroSplit({
   data,
   bgColor = "black",
   textPosition = "right",
+  accent,
 }: Props) {
   const { image, title, body, linkLabel, route } = data;
   const blackTheme = "bg-brand-black text-brand-white";
@@ -38,11 +40,18 @@ export default function PageHeroSplit({
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="relative flex h-[420px] max-w-[610px] flex-[1_0_64.5%] flex-col items-start justify-center gap-4 pl-8 pr-6 tablet:h-[650px] tablet:px-14 desktop:flex-[1_0_42%]">
-        <span className="absolute top-0 block h-[6px] w-32 bg-brand-accent"></span>
-        <h1 className="text-2xl uppercase tablet:text-3xl">{title}</h1>
-        <p className="text-sm opacity-60">{body}</p>
-        <ArrowButton href={`/${route}`}>{linkLabel}</ArrowButton>
+      <div className="relative flex h-[420px] max-w-[610px] flex-[1_0_64.5%] flex-col items-start justify-center tablet:h-[650px] desktop:flex-[1_0_42%]">
+        {accent && (
+          <span className="absolute left-8 top-0 block h-[6px] w-32 bg-brand-accent tablet:hidden" />
+        )}
+        <div className="relative flex flex-col items-start gap-4 pl-8 pr-6 tablet:px-14 desktop:px-28">
+          {accent && (
+            <span className="absolute bottom-0 left-0 top-0 hidden w-[6px] bg-brand-accent tablet:block" />
+          )}
+          <h1 className="text-2xl uppercase tablet:text-3xl">{title}</h1>
+          <p className="text-sm opacity-60">{body}</p>
+          <ArrowButton href={`/${route}`}>{linkLabel}</ArrowButton>
+        </div>
       </div>
     </section>
   );
