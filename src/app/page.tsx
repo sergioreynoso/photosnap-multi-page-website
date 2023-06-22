@@ -7,12 +7,14 @@ export default async function Home() {
       {homeData.map((data, index) => {
         const bgColor = index === 0 ? "black" : "white";
         const textPosition = index % 2 === 0 ? "right" : "left";
+        const withAccent = index ? false : true;
         return (
           <PageHeroSplit
             key={data.id}
             data={data}
             bgColor={bgColor}
             textPosition={textPosition}
+            accent={withAccent}
           />
         );
       })}
