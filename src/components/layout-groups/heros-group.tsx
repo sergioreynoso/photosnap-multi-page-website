@@ -25,7 +25,7 @@ export default function HerosGroup({ limit = 4 }: Props) {
               bgColor={bgColor}
               textPosition={textPosition}>
               <div className="flex flex-col items-start gap-4">
-                <Heading className="text-2xl uppercase tablet:text-3xl">
+                <Heading className="text-2xl font-bold uppercase tablet:text-3xl">
                   {title}
                 </Heading>
                 <p className="text-sm opacity-60">{body}</p>
