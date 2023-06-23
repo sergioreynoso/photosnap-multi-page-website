@@ -1,3 +1,4 @@
+import FeaturesGroup from "../components/layout-groups/features-group";
 import HerosGroup from "../components/layout-groups/heros-group";
 import StoriesGroup from "../components/layout-groups/stories-group";
 
@@ -6,6 +7,7 @@ export default async function Home() {
     <main className="mx-auto max-w-[1440px] pt-18">
       <HerosGroup />
       <StoriesGroup />
+      <FeaturesGroup limit={3} />
     </main>
   );
 }
