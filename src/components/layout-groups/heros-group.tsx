@@ -1,5 +1,5 @@
 import { homeData } from "@/data";
-import PrimaryHeroSplit from "../cards/primary-hero-split";
+import PrimaryHeroCard from "../cards/primary-hero-card";
 import ArrowButton from "../buttons/arrow-button";
 
 type Props = {
@@ -19,7 +19,7 @@ export default function HerosGroup({ limit = 4 }: Props) {
 
         if (index + 1 <= limit)
           return (
-            <PrimaryHeroSplit
+            <PrimaryHeroCard
               image={image}
               accent={withAccent}
               bgColor={bgColor}
@@ -31,7 +31,7 @@ export default function HerosGroup({ limit = 4 }: Props) {
                 <p className="text-sm opacity-60">{body}</p>
                 <ArrowButton href={`/${route}`}>{linkLabel}</ArrowButton>
               </div>
-            </PrimaryHeroSplit>
+            </PrimaryHeroCard>
           );
       })}
     </>

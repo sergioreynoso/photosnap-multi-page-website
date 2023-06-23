@@ -19,7 +19,7 @@ type Props = {
   fullBleed?: boolean;
 };
 // TODO: Add alt text to images
-export default function PrimaryHeroSplit({
+export default function PrimaryHeroCard({
   children,
   image,
   bgColor = "black",
