@@ -14,7 +14,9 @@ export default function Stories() {
       <PrimaryHeroCard image={image} fullBleed>
         <div className="flex flex-col items-start gap-4">
           <p className="text-xs uppercase">{eyebrow}</p>
-          <h1 className="text-2xl uppercase tablet:text-3xl">{title}</h1>
+          <h1 className="text-2xl font-bold uppercase tablet:text-3xl">
+            {title}
+          </h1>
           <p className="text-[13px]">
             <span className="opacity-60">{date}</span>
             {` by ${author}`}
