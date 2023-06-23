@@ -24,6 +24,8 @@ import StoriesBehindTheWaves from "./public/photography/stories/behind-the-waves
 import FeaturesHero from "./public/photography/features/features-hero.jpg";
 import PricingHero from "./public/photography/pricing/pricing-hero.jpg";
 
+import WeAreInBeta from "./public/photography/we-are-in-beta.jpg";
+
 import BoostExposureIcon from "./public/icons/boost-exposure.svg";
 import CustomDomainIcon from "./public/icons/custom-domain.svg";
 import DragDropIcon from "./public/icons/drag-drop.svg";
@@ -293,4 +295,13 @@ export const pricingData = {
       yearlyPrice: "$999.00",
     },
   ],
+};
+
+export const banner = {
+  id: 1,
+  title: "We're in beta. Get your invite today!",
+  body: "",
+  image: WeAreInBeta,
+  linkLabel: "Get an invite",
+  route: "/",
 };
