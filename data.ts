@@ -60,10 +60,11 @@ export const storyData = {
     id: 1,
     date: "March 2nd 2020",
     image: StoriesMoonOfAppalachia,
-    title: "The Mountains",
+    title: "HAZY FULL MOON OF APPALACHIA",
     eyebrow: "Last Months's featured story",
     body: "The dissected plateau area, while not actually made up of geological mountains, is popularly called 'mountains,' especially in eastern Kentucky and West Virginia, and while the ridges are not high, the terrain is extremely rugged.",
     author: "John Appleseed",
+    linkLabel: "Read the story",
     route: "stories",
   },
   stories: [
