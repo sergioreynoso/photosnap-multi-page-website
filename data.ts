@@ -21,6 +21,9 @@ import StoriesDarkForest from "./public/photography/stories/dark-forest.jpg";
 import StoriesCalmWaters from "./public/photography/stories/calm-waters.jpg";
 import StoriesBehindTheWaves from "./public/photography/stories/behind-the-waves.jpg";
 
+import FeaturesHero from "./public/photography/features/features-hero.jpg";
+import PricingHero from "./public/photography/pricing/pricing-hero.jpg";
+
 import BoostExposureIcon from "./public/icons/boost-exposure.svg";
 import CustomDomainIcon from "./public/icons/custom-domain.svg";
 import DragDropIcon from "./public/icons/drag-drop.svg";
@@ -219,6 +222,7 @@ export const featuresData = {
   hero: {
     title: "Features",
     body: "We make sure all of our features are designed to be loved by every aspiring and even professional photograpers who wanted to share their stories.",
+    image: FeaturesHero,
   },
   features: [
     {
@@ -264,6 +268,7 @@ export const pricingData = {
   hero: {
     title: "Pricing",
     body: "Create a your stories, Photosnap is a platform for photographers and visual storytellers. It’s the simple way to create and share your photos.",
+    image: PricingHero,
   },
   prices: [
     {
