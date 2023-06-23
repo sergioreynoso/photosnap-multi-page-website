@@ -1,23 +1,11 @@
-import PageHeroSplit from "../components/page-heros/page-hero-split";
-import { homeData } from "@/data";
+import HerosGroup from "../components/layout-groups/heros-group";
+import StoriesGroup from "../components/layout-groups/stories-group";
 
 export default async function Home() {
   return (
-    <main className="flex flex-col items-center justify-between pt-18">
-      {homeData.map((data, index) => {
-        const bgColor = index === 0 ? "black" : "white";
-        const textPosition = index % 2 === 0 ? "right" : "left";
-        const withAccent = index ? false : true;
-        return (
-          <PageHeroSplit
-            key={data.id}
-            data={data}
-            bgColor={bgColor}
-            textPosition={textPosition}
-            accent={withAccent}
-          />
-        );
-      })}
+    <main className="mx-auto max-w-[1440px] pt-18">
+      <HerosGroup />
+      <StoriesGroup />
     </main>
   );
 }
