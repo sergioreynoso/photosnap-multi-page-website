@@ -8,7 +8,7 @@ export default function Features() {
 
   return (
     <main className="mx-auto max-w-[1440px] pt-18">
-      <PrimaryHeroCard image={image}>
+      <PrimaryHeroCard image={image} accent>
         <div className="flex flex-col items-start gap-5">
           <h1 className="text-2xl font-bold uppercase tablet:text-3xl">
             {title}
