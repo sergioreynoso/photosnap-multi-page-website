@@ -61,7 +61,7 @@ export default function PricingCard({
       </div>
       {/* DESKTOP */}
       <div
-        className={`relative hidden h-[407px] flex-col items-center justify-between desktop:flex ${theme}  px-5 pb-10 pt-14`}>
+        className={`relative hidden h-[407px] flex-col items-center justify-between desktop:flex ${theme}  w-[350px] px-10 pb-10 pt-14`}>
         <Accent />
         <div className="flex flex-col items-center justify-center">
           <h2 className="mb-[18px] text-xl font-bold">{title}</h2>
