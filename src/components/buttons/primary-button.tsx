@@ -17,7 +17,7 @@ const PrimaryButton = React.forwardRef<HTMLAnchorElement, Props>(
       <Link
         {...props}
         ref={ref}
-        className={`flex h-10 min-w-[158px]  transform items-center justify-center ${theme} text-center text-xs font-bold uppercase tracking-[2px] transition-colors`}>
+        className={`flex h-10 w-full min-w-[158px] transform items-center justify-center ${theme} text-center text-xs font-bold uppercase tracking-[2px] transition-colors`}>
         {children}
       </Link>
     );
