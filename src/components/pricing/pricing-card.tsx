@@ -44,7 +44,7 @@ export default function PricingCard({
       </div>
       {/* TABLET */}
       <div
-        className={`relative h-[270px] grid-cols-2 gap-y-8 tablet:grid ${theme}  hidden p-10 desktop:hidden`}>
+        className={`relative h-[270px] grid-cols-2 gap-y-8 tablet:grid ${theme} hidden p-10 desktop:hidden`}>
         <Accent />
         <div className="flex flex-col items-start justify-center">
           <h2 className="mb-[18px] text-xl font-bold">{title}</h2>
@@ -61,7 +61,7 @@ export default function PricingCard({
       </div>
       {/* DESKTOP */}
       <div
-        className={`relative hidden h-[407px] flex-col items-center justify-between desktop:flex ${theme}  w-[350px] px-10 pb-10 pt-14`}>
+        className={`relative hidden h-[407px] flex-col items-center justify-between desktop:flex ${theme} w-[350px] px-10 pb-10 pt-14`}>
         <Accent />
         <div className="flex flex-col items-center justify-center">
           <h2 className="mb-[18px] text-xl font-bold">{title}</h2>
