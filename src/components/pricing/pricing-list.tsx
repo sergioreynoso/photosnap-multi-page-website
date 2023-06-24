@@ -19,7 +19,7 @@ export default function PricingList() {
         </span>
       </div>
 
-      <div className="flex flex-col gap-6 pt-12 desktop:flex-row desktop:items-center">
+      <div className="flex flex-col gap-6 pt-12 desktop:flex-row desktop:items-center desktop:gap-8">
         {pricingData.prices.map((price) => {
           const { body, id, title, monthlyPrice, yearlyPrice } = price;
 
