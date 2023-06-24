@@ -33,7 +33,7 @@ export default function StoriesCard({ data, showDate = false }: Props) {
             <ArrowIcon />
           </div>
         </div>
-        <span className="absolute -bottom-[6px] -z-10 h-[6px] w-full bg-brand-accent" />
+        <span className="block h-[6px] w-full origin-top scale-y-0 bg-brand-accent transition-all group-hover:scale-y-[6px]" />
       </div>
     </Link>
   );
