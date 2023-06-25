@@ -2,6 +2,7 @@ import { pricingData } from "@/data";
 import PrimaryHeroCard from "@/src/components/cards/primary-hero-card";
 import PromoCard from "@/src/components/cards/promo-card";
 import PricingList from "../../components/pricing/pricing-list";
+import PricingCompareTable from "@/src/components/pricing/pricing-compare-table";
 
 export default function Pricing() {
   const { title, body, image } = pricingData.hero;
@@ -16,6 +17,7 @@ export default function Pricing() {
         </div>
       </PrimaryHeroCard>
       <PricingList />
+      <PricingCompareTable />
       <PromoCard />
     </main>
   );
