@@ -8,7 +8,7 @@ export default function PricingList() {
   const [isMonthly, setIsMonthly] = React.useState<boolean>(true);
 
   return (
-    <div className="mx-auto flex max-w-[1110px] flex-col items-center px-7 py-16 desktop:py-[120px]">
+    <div className="mx-auto flex max-w-[1110px] flex-col items-center px-7 py-16 tablet:px-10 desktop:py-[120px]">
       <div className="relative flex w-full max-w-[255px] items-center justify-between desktop:-translate-x-4">
         <span className={`text-lg ${isMonthly && "font-bold"}`}>Monthly</span>
         <div className="absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center">
