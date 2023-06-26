@@ -19,8 +19,8 @@ export default function StoriesCard({ data, showDate = false }: Props) {
     <Link href={`/${route}`} className="group block cursor-pointer">
       <div className="relative h-[375px] w-full flex-auto  bg-brand-white bg-gradient-to-t from-brand-black/60 to-brand-black/0 text-brand-white transition-transform group-hover:-translate-y-6 tablet:h-[500px] tablet:via-brand-black/0">
         <Image
-          src={image}
-          alt="image"
+          src={image.src}
+          alt={image.alt}
           className="h-full w-full object-cover mix-blend-multiply"
         />
         <div className="absolute bottom-0 left-0 right-0 flex flex-col items-start px-8 pb-10 ">

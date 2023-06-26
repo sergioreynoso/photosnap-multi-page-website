@@ -2,8 +2,13 @@ import Image, { StaticImageData } from "next/image";
 import ArrowButton from "../buttons/arrow-button";
 import { homeData } from "@/data";
 
+export type ImageAttributes = {
+  src: StaticImageData;
+  alt: string;
+};
+
 type Data = {
-  image: StaticImageData;
+  image: ImageAttributes;
   title: string;
   body: string;
   linkLabel: string;
@@ -12,7 +17,7 @@ type Data = {
 
 type Props = {
   children: React.ReactNode;
-  image: StaticImageData;
+  image: ImageAttributes;
   bgColor?: "white" | "black";
   textPosition?: "left" | "right";
   accent?: boolean;
@@ -38,8 +43,8 @@ export default function PrimaryHeroCard({
       className={`relative w-screen max-w-screen-desktop ${theme} tablet:flex ${flexReverse}`}>
       <div className="h-[294px] w-full flex-shrink tablet:h-[650px]">
         <Image
-          src={image}
-          alt="man on peer overlooking lake"
+          src={image.src}
+          alt={image.alt}
           priority
           className="h-full w-full object-cover"
         />
