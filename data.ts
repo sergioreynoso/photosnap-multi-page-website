@@ -38,7 +38,7 @@ export const homeData = [
     id: 1,
     title: "create and share your photo stories.",
     body: "Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others.",
-    image: HomeCreateAndShare,
+    image: { src: HomeCreateAndShare, alt: "image alt" },
     linkLabel: "Get an invite",
     route: "/",
   },
@@ -46,7 +46,7 @@ export const homeData = [
     id: 2,
     title: "beautiful  stories every time.",
     body: "We provide design templates to ensure your stories look terrific. Easily add photos, text, embed maps and media from other networks. Then share your story with everyone.",
-    image: HomeBeautifulStories,
+    image: { src: HomeBeautifulStories, alt: "image alt" },
     linkLabel: "View the stories",
     route: "stories",
   },
@@ -54,7 +54,7 @@ export const homeData = [
     id: 3,
     title: "designed for everyone.",
     body: "Photosnap can help you create stories that resonate with your audience. Our tool is designed for photographers of all levels, brands, businesses you name it.",
-    image: HomeDesignedForEveryone,
+    image: { src: HomeDesignedForEveryone, alt: "image alt" },
     linkLabel: "View the stories",
     route: "stories",
   },
@@ -64,8 +64,8 @@ export const storyData = {
   hero: {
     id: 1,
     date: "March 2nd 2020",
-    image: StoriesMoonOfAppalachia,
-    title: "HAZY FULL MOON OF APPALACHIA",
+    image: { src: StoriesMoonOfAppalachia, alt: "image alt" },
+    title: "Hazy Full Moon Of Appalachia",
     eyebrow: "Last Months's featured story",
     body: "The dissected plateau area, while not actually made up of geological mountains, is popularly called 'mountains,' especially in eastern Kentucky and West Virginia, and while the ridges are not high, the terrain is extremely rugged.",
     author: "John Appleseed",
@@ -76,7 +76,7 @@ export const storyData = {
     {
       id: 2,
       date: "April 16th 2020",
-      image: StoriesMountains,
+      image: { src: StoriesMountains, alt: "image alt" },
       title: "The Mountains",
       author: "John Appleseed",
       linkLabel: "stories",
@@ -85,7 +85,7 @@ export const storyData = {
     {
       id: 3,
       date: "April 14th 2020",
-      image: StoriesCityscape,
+      image: { src: StoriesCityscape, alt: "image alt" },
       title: "Sunset Cityscape",
       author: "Benjamin Cruz",
       linkLabel: "stories",
@@ -94,7 +94,7 @@ export const storyData = {
     {
       id: 4,
       date: "April 11th 2020",
-      image: Stories18DaysVoyage,
+      image: { src: Stories18DaysVoyage, alt: "image alt" },
       title: "18 Days Voyage",
       author: "Alexie Borodin",
       linkLabel: "stories",
@@ -103,7 +103,7 @@ export const storyData = {
     {
       id: 5,
       date: "April 9th 2020",
-      image: StoriesArchitectural,
+      image: { src: StoriesArchitectural, alt: "image alt" },
       title: "Architectural",
       author: "Samantha Brooke",
       linkLabel: "stories",
@@ -112,7 +112,7 @@ export const storyData = {
     {
       id: 6,
       date: "April 7th 2020",
-      image: StoriesWorldTour,
+      image: { src: StoriesWorldTour, alt: "image alt" },
       title: "World Tour 2019",
       author: "Timothy Wagner",
       linkLabel: "stories",
@@ -121,7 +121,7 @@ export const storyData = {
     {
       id: 7,
       date: "April 3rd 2020",
-      image: StoriesUnforeseenCorners,
+      image: { src: StoriesUnforeseenCorners, alt: "image alt" },
       title: "Unforeseen Corners",
       author: "William Malcolm",
       linkLabel: "stories",
@@ -130,7 +130,7 @@ export const storyData = {
     {
       id: 8,
       date: "March 29th 2020",
-      image: StoriesKingOnAfrica,
+      image: { src: StoriesKingOnAfrica, alt: "image alt" },
       title: "King on Africa: Part II",
       author: "Tim Hillenburg",
       linkLabel: "stories",
@@ -139,7 +139,7 @@ export const storyData = {
     {
       id: 9,
       date: "March 21st 2020",
-      image: StoriesTripToNowhere,
+      image: { src: StoriesTripToNowhere, alt: "image alt" },
       title: "The Trip to Nowhere",
       author: "Felicia Rourke",
       linkLabel: "stories",
@@ -148,7 +148,7 @@ export const storyData = {
     {
       id: 10,
       date: "March 19th 2020",
-      image: StoriesRageOfTheSea,
+      image: { src: StoriesRageOfTheSea, alt: "image alt" },
       title: "Rage of The Sea",
       author: "Mohammed Abdul",
       linkLabel: "stories",
@@ -157,7 +157,7 @@ export const storyData = {
     {
       id: 11,
       date: "March 16th 2020",
-      image: StoriesRunningFree,
+      image: { src: StoriesRunningFree, alt: "image alt" },
       title: "Running Free",
       author: "Michelle",
       linkLabel: "stories",
@@ -166,7 +166,7 @@ export const storyData = {
     {
       id: 12,
       date: "March 11th 2020",
-      image: StoriesBehindTheWaves,
+      image: { src: StoriesBehindTheWaves, alt: "image alt" },
       title: "Behind the Waves",
       author: " Lamarr Wilson",
       linkLabel: "stories",
@@ -175,7 +175,7 @@ export const storyData = {
     {
       id: 13,
       date: "March 9th 2020",
-      image: StoriesCalmWaters,
+      image: { src: StoriesCalmWaters, alt: "image alt" },
       title: "Calm Waters",
       author: "Samantha Brooke",
       linkLabel: "stories",
@@ -184,7 +184,7 @@ export const storyData = {
     {
       id: 14,
       date: "March 5th 2020",
-      image: StoriesMilkyWay,
+      image: { src: StoriesMilkyWay, alt: "image alt" },
       title: "The Milky Way",
       author: "Benjamin Cruz",
       linkLabel: "stories",
@@ -193,7 +193,7 @@ export const storyData = {
     {
       id: 15,
       date: "March 4th 2020",
-      image: StoriesDarkForest,
+      image: { src: StoriesDarkForest, alt: "image alt" },
       title: "Night at The Dark Forest",
       author: "Mohammed Abdul",
       linkLabel: "stories",
@@ -202,7 +202,7 @@ export const storyData = {
     {
       id: 16,
       date: "March 1st 2020",
-      image: StoriesSomwarpet,
+      image: { src: StoriesSomwarpet, alt: "image alt" },
       title: "Somwarpet’s Beauty",
       author: "Michelle",
       linkLabel: "stories",
@@ -211,7 +211,7 @@ export const storyData = {
     {
       id: 17,
       date: "February 25th 2020",
-      image: StoriesLandOfDreams,
+      image: { src: StoriesLandOfDreams, alt: "image alt" },
       title: "Land of Dreams",
       author: "William Malcolm",
       linkLabel: "stories",
@@ -224,44 +224,44 @@ export const featuresData = {
   hero: {
     title: "Features",
     body: "We make sure all of our features are designed to be loved by every aspiring and even professional photograpers who wanted to share their stories.",
-    image: FeaturesHero,
+    image: { src: FeaturesHero, alt: "image alt" },
   },
   features: [
     {
       id: 1,
       title: "100% Responsive",
       body: "No matter which the device you’re on, our site is fully responsive and stories look beautiful on any screen.",
-      image: ResponsiveIcon,
+      image: { src: ResponsiveIcon, alt: "image alt" },
     },
     {
       id: 2,
       title: "No Photo Upload Limit",
       body: "Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of your stories in one go.",
-      image: NoLimitIcon,
+      image: { src: NoLimitIcon, alt: "image alt" },
     },
     {
       id: 3,
       title: "Available to Embed",
       body: "Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and more.",
-      image: EmbedIcon,
+      image: { src: EmbedIcon, alt: "image alt" },
     },
     {
       id: 4,
       title: "Custom Domain",
       body: "With Photosnap subscriptions you can host your stories on your own domain. You can also remove our branding!",
-      image: CustomDomainIcon,
+      image: { src: CustomDomainIcon, alt: "image alt" },
     },
     {
       id: 5,
       title: "Boost Your Exposure",
       body: "Users that viewed your story or gallery can easily get notified of new and featured stories with our built in mailing list.",
-      image: BoostExposureIcon,
+      image: { src: BoostExposureIcon, alt: "image alt" },
     },
     {
       id: 6,
       title: "Drag & Drop Image",
       body: "Easily drag and drop your image and get beautiful shots every time. No over the top tooling to add friction to creating stories.",
-      image: DragDropIcon,
+      image: { src: DragDropIcon, alt: "image alt" },
     },
   ],
 };
@@ -270,7 +270,7 @@ export const pricingData = {
   hero: {
     title: "Pricing",
     body: "Create a your stories, Photosnap is a platform for photographers and visual storytellers. It’s the simple way to create and share your photos.",
-    image: PricingHero,
+    image: { src: PricingHero, alt: "image alt" },
   },
   prices: [
     {
@@ -368,7 +368,7 @@ export const banner = {
   id: 1,
   title: "We're in beta. Get your invite today!",
   body: "",
-  image: WeAreInBeta,
+  image: { src: WeAreInBeta, alt: "image alt" },
   linkLabel: "Get an invite",
   route: "/",
 };
