@@ -57,8 +57,12 @@ module.exports = {
           to: { opacity: 1 },
         },
         contentShow: {
-          from: { opacity: 0, transform: "translate(-50%, -20px)" },
-          to: { opacity: 1, transform: "translate(-50%, 0)" },
+          from: { transform: "scaleY(0) translateX(-50%)" },
+          to: { transform: "scaleY(100%) translateX(-50%)" },
+        },
+        contentChildrenShow: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
         },
         rotateRight: {
           from: { transform: "translate(50%,-2px) rotate(0deg)" },
@@ -68,12 +72,23 @@ module.exports = {
           from: { transform: "translate(50%,2px) rotate(0deg)" },
           to: { transform: "translate(50%,0) rotate(-45deg)" },
         },
+        reverseRight: {
+          from: { transform: "translate(50%,0) rotate(45deg)" },
+          to: { transform: "translate(50%,-4px) rotate(0deg)" },
+        },
+        reverseLeft: {
+          from: { transform: "translate(50%,0) rotate(-45deg)" },
+          to: { transform: "translate(50%,4px) rotate(0deg)" },
+        },
       },
       animation: {
-        overlayShow: "overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
-        contentShow: "contentShow 300ms cubic-bezier(0.16, 1, 0.3, 1)",
-        rotateRight: "rotateRight 300ms cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        rotateLeft: "rotateLeft 300ms cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        overlayShow: "overlayShow 150ms ease both",
+        contentShow: "contentShow 150ms 150ms ease-out both",
+        contentChildrenShow: "contentChildrenShow 150ms 300ms ease-out both",
+        rotateRight: "rotateRight 300ms ease both",
+        rotateLeft: "rotateLeft 300ms ease both",
+        reverseRight: "reverseRight 300ms ease both ",
+        reverseLeft: "reverseLeft 300ms ease both",
       },
     },
   },
