@@ -5,7 +5,7 @@ import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 export default function PricingCompareTable() {
   return (
-    <div className="flex flex-col items-center px-7 pb-16 pt-8 tablet:px-10">
+    <section className="flex flex-col items-center px-7 pb-16 pt-8 tablet:px-10">
       <h1 className="text-3xl font-bold uppercase">Compare</h1>
       <div className="w-full max-w-[730px] pt-16">
         <table
@@ -43,7 +43,7 @@ export default function PricingCompareTable() {
           </tbody>
         </table>
       </div>
-    </div>
+    </section>
   );
 }
 
