@@ -37,16 +37,21 @@ export default function PrimaryHeroCard({
   const theme = bgColor === "black" ? blackTheme : whiteTheme;
   const flexReverse = textPosition === "right" ? "tablet:flex-row-reverse" : "";
   const absolute = fullBleed ? "tablet:absolute" : "";
+  const imageSizes = fullBleed ? "100vw" : "(max-width: 768px) 100vw, 50vw";
 
   return (
     <section
       className={`relative w-screen max-w-screen-desktop ${theme} tablet:flex ${flexReverse}`}>
-      <div className="h-[294px] w-full flex-shrink tablet:h-[650px]">
+      <div className="relative h-[294px] w-full flex-shrink tablet:h-[650px]">
         <Image
           src={image.src}
           alt={image.alt}
           priority
-          className="h-full w-full object-cover"
+          quality={100}
+          fill={true}
+          sizes={imageSizes}
+          placeholder="blur"
+          className="object-cover"
         />
       </div>
       <div

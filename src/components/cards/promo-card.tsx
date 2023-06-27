@@ -11,7 +11,10 @@ export default function PromoCard() {
       <Image
         src={image.src}
         alt={image.alt}
-        className="h-full w-full object-cover"
+        fill={true}
+        quality={100}
+        sizes="(max-width: 768px) 80vw, 100vw"
+        className="object-cover"
       />
       <div className="absolute bottom-0 left-0 right-0 top-0 mx-auto flex flex-col items-start justify-center gap-6 px-7 text-brand-white tablet:flex-row tablet:items-center tablet:justify-between tablet:px-10 desktop:px-[165px]">
         <span className="absolute bottom-0 left-0 top-0 hidden w-[6px] bg-brand-accent tablet:block" />

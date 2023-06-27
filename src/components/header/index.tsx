@@ -10,7 +10,7 @@ export default function Header() {
     <header className="fixed left-0 right-0 z-10 flex h-17 max-w-full justify-center bg-brand-white px-6 tablet:px-10">
       <div className="flex w-full max-w-[1110px] items-center justify-between">
         <Link href="/">
-          <Image src={Logo} alt="logo" width={170} height={16} priority />
+          <Image src={Logo} alt="logo" priority className="h-4 w-[170px]" />
         </Link>
         <HeaderNavigation />
         <div className="hidden tablet:block">

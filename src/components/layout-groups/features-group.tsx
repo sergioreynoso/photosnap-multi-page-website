@@ -1,5 +1,5 @@
 import { featuresData } from "@/data";
-import FeatureCard from "../cards/feature-card";
+import ProductFeaturesCard from "../cards/product-features-card";
 
 type Props = {
   limit?: number;
@@ -17,12 +17,12 @@ export default function FeaturesGroup({
           const { id, title, body, image } = feature;
           if (index + 1 <= limit)
             return (
-              <FeatureCard key={id} image={image}>
+              <ProductFeaturesCard key={id} image={image}>
                 <div className="flex flex-col items-center gap-4">
                   <h2 className="text-lg font-bold">{title}</h2>
                   <p className="text-center opacity-60">{body}</p>
                 </div>
-              </FeatureCard>
+              </ProductFeaturesCard>
             );
         })}
       </div>
@@ -34,12 +34,12 @@ export default function FeaturesGroup({
         const { id, title, body, image } = feature;
         if (index + 1 <= limit)
           return (
-            <FeatureCard key={id} image={image}>
+            <ProductFeaturesCard key={id} image={image}>
               <div className="flex flex-col items-center gap-4">
                 <h2 className="text-lg font-bold">{title}</h2>
                 <p className="text-center opacity-60">{body}</p>
               </div>
-            </FeatureCard>
+            </ProductFeaturesCard>
           );
       })}
     </div>

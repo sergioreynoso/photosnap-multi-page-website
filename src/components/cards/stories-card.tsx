@@ -21,7 +21,10 @@ export default function StoriesCard({ data, showDate = false }: Props) {
         <Image
           src={image.src}
           alt={image.alt}
-          className="h-full w-full object-cover mix-blend-multiply"
+          fill={true}
+          quality={100}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover mix-blend-multiply"
         />
         <div className="absolute bottom-0 left-0 right-0 flex flex-col items-start px-8 pb-10 ">
           {showDate && <p>{date}</p>}
@@ -33,7 +36,7 @@ export default function StoriesCard({ data, showDate = false }: Props) {
             <ArrowIcon />
           </div>
         </div>
-        <span className="block h-[6px] w-full origin-top scale-y-0 bg-brand-accent transition-all group-hover:scale-y-[6px]" />
+        <span className="absolute -bottom-[6px] left-0 block h-[6px] w-full origin-top scale-y-0 bg-brand-accent transition-transform group-hover:scale-y-[6px]" />
       </div>
     </Link>
   );
