@@ -46,14 +46,14 @@ export default function HeaderMobileNavigation() {
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 top-[72px] bg-brand-black/50 data-[state=open]:animate-overlayShow " />
-        <Dialog.Content className="group fixed left-[50%] top-[72px] w-full origin-top bg-brand-white p-8 data-[state=open]:animate-contentShow">
+        <Dialog.Content className="translateX(-50%) group fixed top-[72px] w-full origin-top transform bg-brand-white p-8 data-[state=open]:animate-contentShow motion-reduce:data-[state=open]:animate-none ">
           <VisuallyHidden.Root asChild>
             <Dialog.Title>Menu</Dialog.Title>
           </VisuallyHidden.Root>
           <VisuallyHidden.Root asChild>
             <Dialog.Description>Navigation dialog</Dialog.Description>
           </VisuallyHidden.Root>
-          <NavigationMenu.Root className="text-center text-sm font-bold uppercase tracking-[2.5px] text-brand-black group-data-[state=open]:animate-contentChildrenShow  tablet:text-xs">
+          <NavigationMenu.Root className="text-center text-sm font-bold uppercase tracking-[2.5px] text-brand-black group-data-[state=open]:animate-contentChildrenShow  motion-reduce:group-data-[state=open]:animate-none tablet:text-xs">
             <NavigationMenu.List className="item-center flex flex-col gap-3 tablet:flex-row tablet:items-center tablet:gap-8 desktop:h-full">
               <Item href="/stories" label="Stories" />
               <Item href="/features" label="Features" />
