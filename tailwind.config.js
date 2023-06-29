@@ -57,8 +57,8 @@ module.exports = {
           to: { opacity: 1 },
         },
         contentShow: {
-          from: { transform: "scaleY(0) translateX(-50%)" },
-          to: { transform: "scaleY(100%) translateX(-50%)" },
+          from: { transform: "scaleY(0)" },
+          to: { transform: "scaleY(100%)" },
         },
         contentChildrenShow: {
           from: { opacity: 0 },
