@@ -23,7 +23,7 @@ type Props = {
   accent?: boolean;
   fullBleed?: boolean;
 };
-// TODO: Add alt text to images
+
 export default function PrimaryHeroCard({
   children,
   image,
