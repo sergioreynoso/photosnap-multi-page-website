@@ -48,7 +48,7 @@ export default function PrimaryHeroCard({
           alt={image.alt}
           priority
           quality={100}
-          fill={true}
+          fill
           sizes={imageSizes}
           placeholder="blur"
           className="object-cover"
