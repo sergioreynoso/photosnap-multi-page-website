@@ -17,7 +17,7 @@ export default function StoriesCard({ data, showDate = false }: Props) {
   const { image, title, author, linkLabel, route, date } = data;
   return (
     <Link href={`/${route}`} className="group block cursor-pointer">
-      <div className="relative h-[375px] w-full flex-auto  bg-brand-white bg-gradient-to-t from-brand-black/60 to-brand-black/0 text-brand-white transition-transform group-hover:-translate-y-6 tablet:h-[500px] tablet:via-brand-black/0">
+      <div className="relative h-[375px] w-full flex-auto  bg-brand-white bg-gradient-to-t from-brand-black/60 to-brand-black/0 text-brand-white transition-transform group-hover:-translate-y-6 motion-reduce:transition-none tablet:h-[500px] tablet:via-brand-black/0">
         <Image
           src={image.src}
           alt={image.alt}
@@ -36,7 +36,7 @@ export default function StoriesCard({ data, showDate = false }: Props) {
             <ArrowIcon />
           </div>
         </div>
-        <span className="absolute -bottom-[6px] left-0 block h-[6px] w-full origin-top scale-y-0 bg-brand-accent transition-transform group-hover:scale-y-[6px]" />
+        <span className="absolute -bottom-[6px] left-0 block h-[6px] w-full origin-top scale-y-0 bg-brand-accent transition-transform group-hover:scale-y-[6px] motion-reduce:transition-none" />
       </div>
     </Link>
   );
