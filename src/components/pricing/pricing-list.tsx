@@ -4,12 +4,31 @@ import PricingCard from "../cards/pricing-card";
 import { pricingData } from "@/data";
 import ToggleButton from "../buttons/toggle-button";
 import { AnimatePresence } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+
+const containerVariant: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      type: "tween",
+      ease: "easeOut",
+      delay: 0.3,
+      duration: 0.5,
+    },
+  },
+};
 
 export default function PricingList() {
   const [isMonthly, setIsMonthly] = React.useState<boolean>(true);
 
   return (
-    <div className="relative mx-auto flex max-w-[1110px] flex-col items-center px-7 py-16 tablet:px-10 desktop:py-[120px]">
+    <motion.div
+      variants={containerVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="relative mx-auto flex max-w-[1110px] flex-col items-center px-7 py-16 tablet:px-10 desktop:py-[120px]">
       <div className="sticky  top-[72px] z-[2] flex w-full  bg-brand-white py-4 desktop:static desktop:mb-0">
         <div className="flex w-full -translate-x-4 items-center justify-center gap-8">
           <p
@@ -48,6 +67,6 @@ export default function PricingList() {
           })}
         </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   );
 }
