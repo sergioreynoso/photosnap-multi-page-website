@@ -1,6 +1,7 @@
 "use client";
-import Image, { StaticImageData } from "next/image";
 import React from "react";
+import Image, { StaticImageData } from "next/image";
+import { motion } from "framer-motion";
 
 export type ImageAttributes = {
   src: StaticImageData;
@@ -55,11 +56,41 @@ export const HeroCard = React.forwardRef<HTMLDivElement, Props>(
         <div
           className={`relative flex max-w-[610px] ${absolute} bottom-0 left-0 right-[35%] top-0 flex-col items-start justify-center  tablet:flex-[1_0_64.5%]  desktop:flex-[1_0_42%]`}>
           {accent && (
-            <span className="absolute left-8 top-0 block h-[6px] w-32 bg-brand-accent tablet:hidden" />
+            <motion.div
+              initial={{
+                opacity: 0,
+                scaleX: 0.1,
+              }}
+              animate={{
+                opacity: 1,
+                scaleX: 1,
+                transition: {
+                  delay: 0.2,
+                  type: "tween",
+                  ease: "easeOut",
+                },
+              }}
+              className="absolute left-8 top-0 block h-[6px] w-32 bg-brand-accent tablet:hidden"
+            />
           )}
           <div className="relative flex flex-col items-start gap-4 py-18 pl-8 pr-6 tablet:px-14 tablet:py-0 desktop:px-28">
             {accent && (
-              <span className="absolute bottom-0 left-0 top-0 hidden w-[6px] bg-brand-accent tablet:block" />
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  scaleY: 0.1,
+                }}
+                animate={{
+                  opacity: 1,
+                  scaleY: 1,
+                  transition: {
+                    delay: 0.2,
+                    type: "tween",
+                    ease: "easeOut",
+                  },
+                }}
+                className="absolute bottom-0 left-0 top-0 hidden w-[6px] bg-brand-accent tablet:block"
+              />
             )}
             {children}
           </div>
