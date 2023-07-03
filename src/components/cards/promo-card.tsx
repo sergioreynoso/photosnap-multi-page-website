@@ -1,12 +1,31 @@
+"use client";
 import Image from "next/image";
 import { banner } from "@/data";
 import ArrowButton from "../buttons/arrow-button";
+import { motion, Variants } from "framer-motion";
+
+const containerVariant: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      type: "tween",
+      ease: "easeOut",
+      duration: 0.5,
+    },
+  },
+};
 
 export default function PromoCard() {
   const { image, title, route, linkLabel } = banner;
 
   return (
-    <div className="relative mx-auto h-[288px] w-full max-w-[1440px]">
+    <motion.div
+      variants={containerVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="relative mx-auto h-[288px] w-full max-w-[1440px]">
       <span className="absolute left-8 top-0 block h-[6px] w-32 bg-brand-accent tablet:hidden" />
       <Image
         src={image.src}
@@ -23,6 +42,6 @@ export default function PromoCard() {
         </h1>
         <ArrowButton href={route}>{linkLabel}</ArrowButton>
       </div>
-    </div>
+    </motion.div>
   );
 }
