@@ -10,23 +10,21 @@ export default function PricingList() {
 
   return (
     <div className="relative mx-auto flex max-w-[1110px] flex-col items-center px-7 py-16 tablet:px-10 desktop:py-[120px]">
-      <div className="sticky top-[72px] z-[2] flex w-full items-center justify-center bg-brand-white py-4 desktop:static desktop:mb-0 desktop:-translate-x-4">
-        <div className="absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center">
-          <ToggleButton onClick={() => setIsMonthly(!isMonthly)} />
-        </div>
-        <div className="flex w-full max-w-[255px] justify-between">
-          <span
-            className={`text-lg ${
-              isMonthly && "-translate-x-[3px] font-bold"
+      <div className="sticky  top-[72px] z-[2] flex w-full  bg-brand-white py-4 desktop:static desktop:mb-0">
+        <div className="flex w-full -translate-x-4 items-center justify-center gap-8">
+          <p
+            className={`text-lg font-bold ${
+              isMonthly && "opacity-50"
             } trans duration-100 backdrop:transition-all`}>
             Monthly
-          </span>
-          <span
-            className={`text-lg ${
-              !isMonthly && "font-bold"
-            } -translate-x-8 transition-all duration-100`}>
+          </p>
+          <ToggleButton onClick={() => setIsMonthly(!isMonthly)} />
+          <p
+            className={`text-lg font-bold ${
+              !isMonthly && "opacity-50"
+            } transition-all duration-100`}>
             year
-          </span>
+          </p>
         </div>
       </div>
 
