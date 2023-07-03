@@ -9,58 +9,18 @@ import Image from "next/image";
 
 const containerVariant: Variants = {
   initial: {
-    opacity: 1,
+    opacity: 0,
   },
   visible: {
     opacity: 1,
     transition: {
-      delay: 0.2,
       duration: 1,
       delayChildren: 0.5,
     },
   },
 };
 
-const textContainerVariant: Variants = {
-  initial: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const titleVariant: Variants = {
-  initial: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-  },
-};
-const paragraphVariant: Variants = {
-  initial: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-  },
-};
-
-const strokeVariant: Variants = {
-  initial: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-  },
-};
-
-const arrowContainerVariant: Variants = {
+const childVariant: Variants = {
   initial: {
     opacity: 0,
   },
@@ -83,7 +43,7 @@ export default function StoriesCard({ data, showDate = false }: Props) {
         variants={containerVariant}
         initial="initial"
         whileInView="visible"
-        viewport={{ once: true, margin: "-200px 0px 0px 0px" }}
+        viewport={{ once: true, amount: 0.4 }}
         className="relative h-[375px] w-full flex-auto  bg-brand-white bg-gradient-to-t from-brand-black/60 to-brand-black/0 text-brand-white transition-transform group-hover:-translate-y-6 motion-reduce:transition-none tablet:h-[500px] tablet:via-brand-black/0">
         <Image
           src={image.src}
@@ -93,33 +53,31 @@ export default function StoriesCard({ data, showDate = false }: Props) {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover mix-blend-multiply"
         />
-        <motion.div
-          variants={textContainerVariant}
-          className="absolute bottom-0 left-0 right-0 flex flex-col items-start px-8 pb-10 ">
+        <div className="absolute bottom-0 left-0 right-0 flex flex-col items-start px-8 pb-10 ">
           {showDate && <p>{date}</p>}
           <motion.h2
-            variants={titleVariant}
+            variants={childVariant}
             className="inline-block text-lg font-bold">
             {title}
           </motion.h2>
-          <motion.p variants={paragraphVariant} className="text-[13px]">
+          <motion.p variants={childVariant} className="text-[13px]">
             {`by ${author}`}
           </motion.p>
-          <motion.div variants={strokeVariant} className="my-[15px] w-full">
+          <motion.div variants={childVariant} className="my-[15px] w-full">
             <Separator.Root
               className="bg-brand-grey data-[orientation=horizontal]:h-px data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px"
               orientation="horizontal"
             />
           </motion.div>
           <motion.div
-            variants={arrowContainerVariant}
+            variants={childVariant}
             className="flex w-full items-center justify-between text-xs uppercase">
             <p>{linkLabel}</p>
             <div>
               <ArrowIcon />
             </div>
           </motion.div>
-        </motion.div>
+        </div>
         <span className="absolute -bottom-[6px] left-0 block h-[6px] w-full origin-top scale-y-0 bg-brand-accent transition-transform group-hover:scale-y-[6px] motion-reduce:transition-none" />
       </motion.div>
     </Link>
