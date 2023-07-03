@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ImageAttributes } from "./primary-hero-card";
+import { ImageAttributes } from "./hero-card";
 
 type Props = {
   children: React.ReactNode;
