@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import PricingCard from "./pricing-card";
+import PricingCard from "../cards/pricing-card";
 import { pricingData } from "@/data";
 import ToggleButton from "../buttons/toggle-button";
 import { AnimatePresence } from "framer-motion";
