@@ -1,4 +1,6 @@
+"use client";
 import PrimaryButton from "../buttons/primary-button";
+import { motion, Variants, AnimatePresence, MotionProps } from "framer-motion";
 
 type Props = {
   dark?: boolean;
@@ -6,6 +8,27 @@ type Props = {
   body: string;
   price: string;
   paymentInterval: string;
+};
+
+type PriceProps = JSX.IntrinsicElements["p"] &
+  MotionProps & {
+    price: string;
+    paymentInterval: string;
+  };
+
+const priceVariant: Variants = {
+  enter: {
+    opacity: 0,
+    transition: {
+      duration: 0.2,
+    },
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+    },
+  },
 };
 
 export default function PricingCard({
@@ -33,11 +56,18 @@ export default function PricingCard({
           <h2 className="mb-[18px] text-xl font-bold">{title}</h2>
           <p className="text-center opacity-60">{body}</p>
         </div>
-        <p className="text-center">
+
+        <motion.p
+          className="text-center"
+          variants={priceVariant}
+          initial="enter"
+          animate="visible"
+          exit="enter">
           <span className="text-3xl font-bold">{price}</span>
           <br />
           <span className="opacity-60">{paymentInterval}</span>
-        </p>
+        </motion.p>
+
         <PrimaryButton href="" bgColor={dark ? "white" : "black"}>
           Pick A Plan
         </PrimaryButton>
@@ -50,11 +80,16 @@ export default function PricingCard({
           <h2 className="mb-[18px] text-xl font-bold">{title}</h2>
           <p className="opacity-60">{body}</p>
         </div>
-        <p className="text-right">
+        <motion.p
+          className="text-right"
+          variants={priceVariant}
+          initial="enter"
+          animate="visible"
+          exit="enter">
           <span className="text-3xl font-bold">{price}</span>
           <br />
           <span className="opacity-60">{paymentInterval}</span>
-        </p>
+        </motion.p>
         <PrimaryButton href="" bgColor={dark ? "white" : "black"}>
           Pick A Plan
         </PrimaryButton>
@@ -67,11 +102,16 @@ export default function PricingCard({
           <h2 className="mb-[18px] text-xl font-bold">{title}</h2>
           <p className="text-center opacity-60">{body}</p>
         </div>
-        <p className="text-center">
+        <motion.p
+          className="text-center"
+          variants={priceVariant}
+          initial="enter"
+          animate="visible"
+          exit="enter">
           <span className="text-3xl font-bold">{price}</span>
           <br />
           <span className="opacity-60">{paymentInterval}</span>
-        </p>
+        </motion.p>
         <PrimaryButton href="" bgColor={dark ? "white" : "black"}>
           Pick A Plan
         </PrimaryButton>
