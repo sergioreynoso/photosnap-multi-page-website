@@ -1,6 +1,6 @@
+"use client";
 import Image, { StaticImageData } from "next/image";
-import ArrowButton from "../buttons/arrow-button";
-import { homeData } from "@/data";
+import { motion } from "framer-motion";
 
 export type ImageAttributes = {
   src: StaticImageData;
@@ -59,7 +59,7 @@ export default function PrimaryHeroCard({
         {accent && (
           <span className="absolute left-8 top-0 block h-[6px] w-32 bg-brand-accent tablet:hidden" />
         )}
-        <div className="relative flex flex-col items-start gap-4 py-18 pl-8 pr-6 tablet:px-14 desktop:px-28">
+        <div className="relative flex flex-col items-start gap-4 py-18 pl-8 pr-6 tablet:px-14 tablet:py-0 desktop:px-28">
           {accent && (
             <span className="absolute bottom-0 left-0 top-0 hidden w-[6px] bg-brand-accent tablet:block" />
           )}
