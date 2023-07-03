@@ -2,10 +2,28 @@
 import { pricingTableData } from "@/data";
 import CheckIcon from "../icons/checkIcon";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { motion, Variants } from "framer-motion";
 
+const containerVariant: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      type: "tween",
+      ease: "easeOut",
+      delay: 0.3,
+      duration: 0.5,
+    },
+  },
+};
 export default function PricingCompareTable() {
   return (
-    <section className="flex flex-col items-center px-7 pb-16 pt-8 tablet:px-10">
+    <motion.section
+      variants={containerVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="flex flex-col items-center px-7 pb-16 pt-8 tablet:px-10">
       <h1 className="text-3xl font-bold uppercase">Compare</h1>
       <div className="w-full max-w-[730px] pt-16">
         <table
@@ -43,7 +61,7 @@ export default function PricingCompareTable() {
           </tbody>
         </table>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
