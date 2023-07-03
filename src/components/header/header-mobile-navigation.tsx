@@ -46,7 +46,7 @@ export default function HeaderMobileNavigation() {
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 top-[72px] bg-brand-black/50 data-[state=open]:animate-overlayShow " />
-        <Dialog.Content className="translateX(-50%) group fixed top-[72px] w-full origin-top transform bg-brand-white p-8 data-[state=open]:animate-contentShow motion-reduce:data-[state=open]:animate-none ">
+        <Dialog.Content className="translateX(-50%) group fixed top-[72px] z-[100] w-full origin-top transform bg-brand-white p-8 data-[state=open]:animate-contentShow motion-reduce:data-[state=open]:animate-none ">
           <VisuallyHidden.Root asChild>
             <Dialog.Title>Menu</Dialog.Title>
           </VisuallyHidden.Root>
