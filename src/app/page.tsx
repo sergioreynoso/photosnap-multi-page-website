@@ -1,4 +1,4 @@
-import FeaturesGroup from "../components/layout-groups/features-group";
+import FeaturesGroup from "../components/layout-groups/product-features-group";
 import HerosGroup from "../components/layout-groups/heros-group";
 import StoriesGroup from "../components/layout-groups/stories-group";
 
