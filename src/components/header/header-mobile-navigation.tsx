@@ -30,7 +30,7 @@ export default function HeaderMobileNavigation() {
       scaleY: 0,
       transition: {
         type: "tween",
-        ease: "easeIn",
+        ease: "easeOut",
         duration: 0.2,
         when: "afterChildren",
       },
@@ -52,9 +52,7 @@ export default function HeaderMobileNavigation() {
     exit: {
       opacity: 0,
       transition: {
-        type: "tween",
-        ease: "easeIn",
-        duration: 0.1,
+        duration: 0.2,
       },
     },
   };
