@@ -59,37 +59,39 @@ const StoriesHeroCard = () => {
   const { image, route, title, linkLabel, body, eyebrow, date, author } =
     storyData.hero;
   return (
-    <MotionHeroCard
-      variants={containerVariant}
-      initial="hidden"
-      animate="visible"
-      image={image}
-      fullBleed>
-      <motion.div
-        variants={textContainer}
+    <div className="bg-brand-black">
+      <MotionHeroCard
+        variants={containerVariant}
         initial="hidden"
         animate="visible"
-        className="flex flex-col items-start gap-4">
-        <motion.p variants={childVariant} className="text-xs uppercase">
-          {eyebrow}
-        </motion.p>
-        <motion.h1
-          variants={childVariant}
-          className="text-2xl font-bold uppercase tablet:text-3xl">
-          {title}
-        </motion.h1>
-        <motion.p variants={childVariant} className="text-[13px]">
-          <span className="opacity-60">{date}</span>
-          {` by ${author}`}
-        </motion.p>
-        <motion.p variants={childVariant} className="text-sm opacity-60">
-          {body}
-        </motion.p>
-        <motion.div variants={arrowButtonVariant}>
-          <ArrowButton href={`/${route}`}>{linkLabel}</ArrowButton>
+        image={image}
+        fullBleed>
+        <motion.div
+          variants={textContainer}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col items-start gap-4">
+          <motion.p variants={childVariant} className="text-xs uppercase">
+            {eyebrow}
+          </motion.p>
+          <motion.h1
+            variants={childVariant}
+            className="text-2xl font-bold uppercase tablet:text-3xl">
+            {title}
+          </motion.h1>
+          <motion.p variants={childVariant} className="text-[13px]">
+            <span className="opacity-60">{date}</span>
+            {` by ${author}`}
+          </motion.p>
+          <motion.p variants={childVariant} className="text-sm opacity-60">
+            {body}
+          </motion.p>
+          <motion.div variants={arrowButtonVariant}>
+            <ArrowButton href={`/${route}`}>{linkLabel}</ArrowButton>
+          </motion.div>
         </motion.div>
-      </motion.div>
-    </MotionHeroCard>
+      </MotionHeroCard>
+    </div>
   );
 };
 
