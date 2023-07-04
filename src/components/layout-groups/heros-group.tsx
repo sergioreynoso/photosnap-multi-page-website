@@ -56,11 +56,7 @@ export default function HerosGroup({ limit = 4 }: Props) {
   const MotionArrowButton = motion(ArrowButton);
 
   return (
-    <motion.div
-      className=""
-      initial={{ backgroundColor: "#000" }}
-      animate={{ backgroundColor: "#FFF" }}
-      transition={{ delay: 1 }}>
+    <>
       {homeData.map((data, index) => {
         const { image, title, body, linkLabel, route } = data;
         const bgColor = index === 0 ? "black" : "white";
@@ -71,36 +67,38 @@ export default function HerosGroup({ limit = 4 }: Props) {
 
         if (index + 1 <= limit)
           return (
-            <MotionHeroCard
-              image={image}
-              accent={withAccent}
-              bgColor={bgColor}
-              textPosition={textPosition}
-              key={index}
-              variants={containerVariant}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.4 }}>
-              <motion.div className="flex flex-col items-start gap-4">
-                <Heading
-                  className="text-2xl font-bold uppercase tablet:text-3xl"
-                  variants={childVariant}>
-                  {title}
-                </Heading>
-                <motion.p
-                  className="text-sm opacity-60"
-                  variants={childVariant}>
-                  {body}
-                </motion.p>
-                <motion.div variants={arrowButtonVariant}>
-                  <MotionArrowButton href={`/${route}`}>
-                    {linkLabel}
-                  </MotionArrowButton>
+            <div className={`bg-brand-${bgColor}`}>
+              <MotionHeroCard
+                image={image}
+                accent={withAccent}
+                bgColor={bgColor}
+                textPosition={textPosition}
+                key={index}
+                variants={containerVariant}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.4 }}>
+                <motion.div className="flex flex-col items-start gap-4">
+                  <Heading
+                    className="text-2xl font-bold uppercase tablet:text-3xl"
+                    variants={childVariant}>
+                    {title}
+                  </Heading>
+                  <motion.p
+                    className="text-sm opacity-60"
+                    variants={childVariant}>
+                    {body}
+                  </motion.p>
+                  <motion.div variants={arrowButtonVariant}>
+                    <MotionArrowButton href={`/${route}`}>
+                      {linkLabel}
+                    </MotionArrowButton>
+                  </motion.div>
                 </motion.div>
-              </motion.div>
-            </MotionHeroCard>
+              </MotionHeroCard>
+            </div>
           );
       })}
-    </motion.div>
+    </>
   );
 }
