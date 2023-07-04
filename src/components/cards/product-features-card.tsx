@@ -35,7 +35,6 @@ type Props = {
 };
 
 export default function ProductFeaturesCard({ children, image }: Props) {
-  console.log(image.src);
   return (
     <motion.div
       variants={containerVariant}
