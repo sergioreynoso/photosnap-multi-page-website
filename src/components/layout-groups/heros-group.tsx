@@ -5,9 +5,14 @@ import ArrowButton from "../buttons/arrow-button";
 import { motion, Variants } from "framer-motion";
 
 const containerVariant: Variants = {
-  hidden: {},
+  hidden: { opacity: 0 },
   visible: {
+    opacity: 1,
     transition: {
+      duration: 1,
+      type: "tween",
+      ease: "easeInOut",
+      delayChildren: 0.5,
       staggerChildren: 0.2,
     },
   },
@@ -51,7 +56,11 @@ export default function HerosGroup({ limit = 4 }: Props) {
   const MotionArrowButton = motion(ArrowButton);
 
   return (
-    <>
+    <motion.div
+      className=""
+      initial={{ backgroundColor: "#000" }}
+      animate={{ backgroundColor: "#FFF" }}
+      transition={{ delay: 1 }}>
       {homeData.map((data, index) => {
         const { image, title, body, linkLabel, route } = data;
         const bgColor = index === 0 ? "black" : "white";
@@ -92,6 +101,6 @@ export default function HerosGroup({ limit = 4 }: Props) {
             </MotionHeroCard>
           );
       })}
-    </>
+    </motion.div>
   );
 }
