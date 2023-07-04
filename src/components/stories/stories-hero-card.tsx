@@ -9,6 +9,19 @@ const containerVariant: Variants = {
     opacity: 1,
     transition: {
       type: "tween",
+      ease: "easeInOut",
+      duration: 1,
+      delayChildren: 0.5,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const textContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      type: "tween",
       ease: "easeOut",
       duration: 0.5,
       staggerChildren: 0.2,
@@ -41,12 +54,19 @@ const arrowButtonVariant: Variants = {
 };
 
 const StoriesHeroCard = () => {
+  const MotionHeroCard = motion(HeroCard);
+
   const { image, route, title, linkLabel, body, eyebrow, date, author } =
     storyData.hero;
   return (
-    <HeroCard image={image} fullBleed>
+    <MotionHeroCard
+      variants={containerVariant}
+      initial="hidden"
+      animate="visible"
+      image={image}
+      fullBleed>
       <motion.div
-        variants={containerVariant}
+        variants={textContainer}
         initial="hidden"
         animate="visible"
         className="flex flex-col items-start gap-4">
@@ -69,7 +89,7 @@ const StoriesHeroCard = () => {
           <ArrowButton href={`/${route}`}>{linkLabel}</ArrowButton>
         </motion.div>
       </motion.div>
-    </HeroCard>
+    </MotionHeroCard>
   );
 };
 
