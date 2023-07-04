@@ -67,7 +67,7 @@ export default function HerosGroup({ limit = 4 }: Props) {
 
         if (index + 1 <= limit)
           return (
-            <div className={`bg-brand-${bgColor}`}>
+            <div key={index} className={`bg-brand-${bgColor}`}>
               <MotionHeroCard
                 image={image}
                 accent={withAccent}
