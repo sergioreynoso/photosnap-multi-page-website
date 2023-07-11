@@ -8,6 +8,7 @@ import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import * as Dialog from "@radix-ui/react-dialog";
 import HamburgerBtn from "@components/buttons/hamburger-button";
 import PrimaryButton from "@components/buttons/primary-button";
+import useIsCurrentRoute from "@/src/lib/hooks/useIsCurrentRoute";
 
 export default function HeaderMobileNavigation() {
   const [open, setOpen] = React.useState(false);
@@ -57,13 +58,15 @@ export default function HeaderMobileNavigation() {
     },
   };
 
-  const Item = ({ href, label }: { href: string; label: string }) => {
+  const Item = ({ route, label }: { route: string; label: string }) => {
+    const { isCurrentRoute } = useIsCurrentRoute(route);
+
     return (
       <NavigationMenu.Item asChild>
         <motion.li variants={navigationItemVarian}>
-          <NavigationMenu.Link asChild>
+          <NavigationMenu.Link asChild active={isCurrentRoute}>
             <Link
-              href={href}
+              href={route}
               className=" hover:opacity-30"
               onClick={() => setOpen(false)}>
               {label}
@@ -120,9 +123,9 @@ export default function HeaderMobileNavigation() {
                 </VisuallyHidden.Root>
                 <NavigationMenu.Root className="text-center text-sm font-bold uppercase tracking-[2.5px] text-brand-black tablet:text-xs">
                   <NavigationMenu.List className="item-center flex flex-col gap-3 tablet:flex-row tablet:items-center tablet:gap-8 desktop:h-full">
-                    <Item href="/stories" label="Stories" />
-                    <Item href="/features" label="Features" />
-                    <Item href="/pricing" label="Pricing" />
+                    <Item route="/stories" label="Stories" />
+                    <Item route="/features" label="Features" />
+                    <Item route="/pricing" label="Pricing" />
                     <Separator.Root
                       className="my-[15px] bg-brand-grey data-[orientation=horizontal]:h-px data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px tablet:hidden"
                       asChild>

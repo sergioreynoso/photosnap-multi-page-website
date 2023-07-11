@@ -32,7 +32,7 @@ export default function Footer() {
           <Logo />
           <SocialIcons />
           <div className="mb-7 mt-2">
-            <FooterNavigation />
+            <FooterNavigation label="footer navigation" />
           </div>
           <GetAnInviteBtn />
           <CopyRight />
@@ -44,7 +44,7 @@ export default function Footer() {
             <div className="justify-self-end">
               <GetAnInviteBtn />
             </div>
-            <FooterNavigation />
+            <FooterNavigation label="footer navigation" />
           </div>
           <div className="flex items-center justify-between">
             <SocialIcons />
@@ -57,7 +57,7 @@ export default function Footer() {
             <Logo />
             <SocialIcons />
           </div>
-          <FooterNavigation />
+          <FooterNavigation label="footer navigation" />
           <div className="ml-auto flex flex-col items-end justify-between">
             <GetAnInviteBtn />
             <CopyRight />
