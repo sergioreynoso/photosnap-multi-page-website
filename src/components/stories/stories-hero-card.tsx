@@ -1,5 +1,5 @@
 import { motion, Variants } from "framer-motion";
-import { storyData } from "@/data";
+import data from "@/data";
 import { HeroCard } from "@/src/components/cards/hero-card";
 import ArrowButton from "@/src/components/buttons/arrow-button";
 
@@ -12,41 +12,32 @@ const containerVariant: Variants = {
       ease: "easeInOut",
       duration: 1,
       delayChildren: 0.5,
-      staggerChildren: 0.2,
     },
   },
 };
 
-const textContainer: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      type: "tween",
-      ease: "easeOut",
-      duration: 0.5,
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const childVariant = {
+const childVariant: Variants = {
   hidden: {
     opacity: 0,
   },
   visible: {
     opacity: 1,
+    transition: {
+      duration: 1,
+    },
   },
 };
 
 const arrowButtonVariant: Variants = {
   hidden: {
-    x: -20,
+    x: "-20%",
     opacity: 0,
   },
   visible: {
     x: 0,
     opacity: 1,
     transition: {
+      duration: 0.8,
       type: "tween",
       ease: "easeOut",
     },
@@ -55,40 +46,34 @@ const arrowButtonVariant: Variants = {
 
 const StoriesHeroCard = () => {
   const MotionHeroCard = motion(HeroCard);
+  const MotionArrowButton = motion(ArrowButton);
 
-  const { image, route, title, linkLabel, body, eyebrow, date, author } =
-    storyData.hero;
+  const { image, title, linkLabel, body, eyebrow, date, author } =
+    data.heros.stories;
   return (
     <div className="bg-brand-black">
       <MotionHeroCard
-        variants={containerVariant}
         initial="hidden"
         animate="visible"
+        variants={containerVariant}
         image={image}
-        fullBleed>
+        height="tall"
+        bleed>
         <motion.div
-          variants={textContainer}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-col items-start gap-4">
-          <motion.p variants={childVariant} className="text-xs uppercase">
-            {eyebrow}
-          </motion.p>
-          <motion.h1
-            variants={childVariant}
-            className="text-2xl font-bold uppercase tablet:text-3xl">
+          variants={childVariant}
+          className="relative flex flex-col items-start py-12 pl-8 pr-6 tablet:px-[54px] tablet:py-0 desktop:px-[112px]">
+          <p className="mb-4 text-xs uppercase">{eyebrow}</p>
+          <h1 className="mb-4 text-2xl font-bold uppercase tablet:mb-[21px] tablet:text-3xl">
             {title}
-          </motion.h1>
-          <motion.p variants={childVariant} className="text-[13px]">
-            <span className="opacity-60">{date}</span>
-            {` by ${author}`}
-          </motion.p>
-          <motion.p variants={childVariant} className="text-sm opacity-60">
-            {body}
-          </motion.p>
-          <motion.div variants={arrowButtonVariant}>
-            <ArrowButton href={`/${route}`}>{linkLabel}</ArrowButton>
-          </motion.div>
+          </h1>
+          <p className="mb-6 text-[13px]">
+            <span className="mr-2 opacity-60">{date}</span>
+            {`by ${author}`}
+          </p>
+          <p className="mb-6 text-sm opacity-60">{body}</p>
+          <MotionArrowButton variants={arrowButtonVariant} href={``}>
+            {linkLabel}
+          </MotionArrowButton>
         </motion.div>
       </MotionHeroCard>
     </div>

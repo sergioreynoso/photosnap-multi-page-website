@@ -1,12 +1,12 @@
-import { storyData } from "@/data";
-import StoriesCard from "../cards/stories-card";
+import data from "@/data";
+import StoriesCard from "../cards/story-card";
 
 type Props = {
   limit?: number;
 };
 
 export default function StoriesGroup({ limit = 4 }: Props) {
-  const { stories } = storyData;
+  const stories = data.stories;
   return (
     <div className="bg-brand-white tablet:grid tablet:grid-cols-2 desktop:grid-cols-4">
       {stories.map((storyData, index) => {

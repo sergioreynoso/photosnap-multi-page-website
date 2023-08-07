@@ -1,5 +1,5 @@
 "use client";
-import { pricingTableData } from "@/data";
+import data from "@/data";
 import CheckIcon from "../icons/checkIcon";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { motion, Variants } from "framer-motion";
@@ -55,9 +55,9 @@ export default function PricingCompareTable() {
             </tr>
           </thead>
           <tbody>
-            {pricingTableData.map((data, index) => {
-              return <TableRow key={index} data={data} />;
-            })}
+            {data.compare.map((data, index) => (
+              <TableRow key={index} data={data} />
+            ))}
           </tbody>
         </table>
       </div>
@@ -66,19 +66,21 @@ export default function PricingCompareTable() {
 }
 
 type TableRowProps = {
-  data: (typeof pricingTableData)[number];
+  data: (typeof data.compare)[number];
 };
 
 function TableRow({ data }: TableRowProps) {
   const { basic, business, pro } = data.tiers;
 
-  const featureMessage = `, included ${!basic && !pro ? "only in" : "in "} ${
-    basic ? "basic," : ""
-  } ${pro ? "pro," : ""} ${pro ? "and " : ""}${business ? "business" : ""}`;
+  const featureAccessibleMessage = `, included ${
+    !basic && !pro ? "only in" : "in "
+  } ${basic ? "basic," : ""} ${pro ? "pro," : ""} ${pro ? "and " : ""}${
+    business ? "business" : ""
+  }`;
 
-  const basicMessage = basic ? "included" : "not included";
-  const propMessage = pro ? "included" : "not included";
-  const businessMessage = business ? "included" : "not included";
+  const basicAccessibleMessage = basic ? "included" : "not included";
+  const propAccessibleMessage = pro ? "included" : "not included";
+  const businessAccessibleMessage = business ? "included" : "not included";
 
   return (
     <tr
@@ -89,28 +91,28 @@ function TableRow({ data }: TableRowProps) {
         className="basis-full font-bold tablet:px-6 tablet:py-6"
         scope="row">
         {data.featureName}
-        <VisuallyHidden> {featureMessage}</VisuallyHidden>
+        <VisuallyHidden> {featureAccessibleMessage}</VisuallyHidden>
       </th>
       <td
         role="cell"
         className="pr-4 before:block before:pb-2 before:text-[10px] before:tracking-[1.67px] before:opacity-50 before:content-[attr(data-cell)] tablet:px-6 tablet:py-6 tablet:text-center tablet:before:hidden"
         data-cell="basic">
         {basic && <CheckIcon className="tablet:mx-auto" />}
-        <VisuallyHidden>{basicMessage}</VisuallyHidden>
+        <VisuallyHidden>{basicAccessibleMessage}</VisuallyHidden>
       </td>
       <td
         role="cell"
         className="pr-4 before:block before:pb-2 before:text-[10px] before:tracking-[1.67px] before:opacity-50 before:content-[attr(data-cell)] tablet:px-6 tablet:py-6 tablet:before:hidden"
         data-cell="pro">
         {pro && <CheckIcon className="tablet:mx-auto" />}
-        <VisuallyHidden>{propMessage}</VisuallyHidden>
+        <VisuallyHidden>{propAccessibleMessage}</VisuallyHidden>
       </td>
       <td
         role="cell"
         className="before:block before:pb-2 before:text-[10px] before:tracking-[1.67px] before:opacity-50 before:content-[attr(data-cell)] tablet:px-6 tablet:py-6 tablet:before:hidden"
         data-cell="business">
         {business && <CheckIcon className="tablet:mx-auto" />}
-        <VisuallyHidden>{businessMessage}</VisuallyHidden>
+        <VisuallyHidden>{businessAccessibleMessage}</VisuallyHidden>
       </td>
     </tr>
   );

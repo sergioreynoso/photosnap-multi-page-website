@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import PricingCard from "../cards/pricing-card";
-import { pricingData } from "@/data";
+import data from "@/data";
 import ToggleButton from "../buttons/toggle-button";
 import { AnimatePresence } from "framer-motion";
 import { motion, Variants } from "framer-motion";
@@ -49,7 +49,7 @@ export default function PricingList() {
 
       <div className="flex flex-col gap-6 pt-12 desktop:flex-row desktop:items-center desktop:gap-8">
         <AnimatePresence mode="wait" initial={false}>
-          {pricingData.prices.map((price) => {
+          {data.pricing.map((price) => {
             const { body, id, title, monthlyPrice, yearlyPrice } = price;
             const isPro = title.toLocaleLowerCase() === "pro";
             const planPrice = isMonthly ? monthlyPrice : yearlyPrice;
