@@ -1,5 +1,5 @@
 "use client";
-import { homeData } from "@/data";
+import data from "@/data";
 import { HeroCard } from "../cards/hero-card";
 import ArrowButton from "../buttons/arrow-button";
 import { motion, Variants } from "framer-motion";
@@ -18,7 +18,7 @@ const containerVariant: Variants = {
   },
 };
 
-const childVariant = {
+const childVariant: Variants = {
   hidden: {
     opacity: 0,
   },
@@ -57,44 +57,40 @@ export default function HerosGroup({ limit = 4 }: Props) {
 
   return (
     <>
-      {homeData.map((data, index) => {
-        const { image, title, body, linkLabel, route } = data;
-        const bgColor = index === 0 ? "black" : "white";
-        const textPosition = index % 2 === 0 ? "right" : "left";
-        const withAccent = index ? false : true;
-        const Heading = index === 0 ? motion.h1 : motion.h2;
+      {data.promos.map((promo, index) => {
+        const { image, title, body, linkLabel, route } = promo;
         const MotionHeroCard = motion(HeroCard);
 
         if (index + 1 <= limit)
           return (
-            <div key={index} className={`bg-brand-${bgColor}`}>
+            <div key={index} className={`bg-brand-white`}>
               <MotionHeroCard
-                image={image}
-                accent={withAccent}
-                bgColor={bgColor}
-                textPosition={textPosition}
                 key={index}
                 variants={containerVariant}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.4 }}>
-                <motion.div className="flex flex-col items-start gap-4">
-                  <Heading
-                    className="text-2xl font-bold uppercase tablet:text-3xl"
-                    variants={childVariant}>
+                viewport={{ once: true, amount: 0.4 }}
+                image={image}
+                theme="white"
+                height="tall"
+                textPosition={index % 2 === 0 ? "on-right" : "on-left"}>
+                <div className="relative flex flex-col items-start py-12 pl-8 pr-6 tablet:px-[54px] tablet:py-0 desktop:px-[112px]">
+                  <motion.h2
+                    variants={childVariant}
+                    className="mb-4 text-2xl font-bold uppercase tablet:mb-[21px] tablet:text-3xl">
                     {title}
-                  </Heading>
+                  </motion.h2>
                   <motion.p
-                    className="text-sm opacity-60"
-                    variants={childVariant}>
+                    variants={childVariant}
+                    className="text-sm opacity-60">
                     {body}
                   </motion.p>
-                  <motion.div variants={arrowButtonVariant}>
-                    <MotionArrowButton href={`/${route}`}>
-                      {linkLabel}
-                    </MotionArrowButton>
-                  </motion.div>
-                </motion.div>
+                  <MotionArrowButton
+                    variants={arrowButtonVariant}
+                    href={`/${route}`}>
+                    {linkLabel}
+                  </MotionArrowButton>
+                </div>
               </MotionHeroCard>
             </div>
           );
