@@ -1,5 +1,5 @@
 import FeaturesGroup from "@/src/components/layout-groups/product-features-group";
-import PromoCard from "@/src/components/cards/promo-card";
+import Banner from "@/src/components/cards/banner";
 import { FeaturesHeroCard } from "@/src/components/features/features-hero-card";
 
 export default function Features() {
@@ -7,7 +7,7 @@ export default function Features() {
     <main className="mx-auto max-w-[1440px] pt-18">
       <FeaturesHeroCard />
       <FeaturesGroup grid />
-      <PromoCard />
+      <Banner />
     </main>
   );
 }

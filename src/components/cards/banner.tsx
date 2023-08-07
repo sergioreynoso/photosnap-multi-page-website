@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { banner } from "@/data";
+import data from "@/data";
 import ArrowButton from "../buttons/arrow-button";
 import { motion, Variants } from "framer-motion";
 
@@ -17,7 +17,7 @@ const containerVariant: Variants = {
 };
 
 export default function PromoCard() {
-  const { image, title, route, linkLabel } = banner;
+  const { image, title, route, linkLabel } = data.banners[0];
 
   return (
     <motion.div

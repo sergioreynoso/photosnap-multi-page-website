@@ -1,4 +1,4 @@
-import PromoCard from "@/src/components/cards/promo-card";
+import PromoCard from "@/src/components/cards/banner";
 import PricingList from "../../components/pricing/pricing-list";
 import PricingCompareTable from "@/src/components/pricing/pricing-compare-table";
 import { PricingHeroCard } from "@/src/components/pricing/pricing-hero-card";
