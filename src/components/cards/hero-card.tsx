@@ -1,7 +1,5 @@
-"use client";
-import React from "react";
 import Image, { StaticImageData } from "next/image";
-import { motion } from "framer-motion";
+import { ReactNode, forwardRef } from "react";
 
 export type ImageAttributes = {
   src: StaticImageData;
@@ -9,91 +7,60 @@ export type ImageAttributes = {
 };
 
 type Props = {
-  children: React.ReactNode;
+  children?: ReactNode;
+  theme?: "black" | "white";
   image: ImageAttributes;
-  bgColor?: "white" | "black";
-  textPosition?: "left" | "right";
-  accent?: boolean;
-  fullBleed?: boolean;
+  height?: "tall" | "short";
+  bleed?: boolean;
+  textPosition?: "on-right" | "on-left";
 };
 
-export const HeroCard = React.forwardRef<HTMLDivElement, Props>(
+export const HeroCard = forwardRef<HTMLDivElement, Props>(
   (
     {
       children,
+      theme = "black",
       image,
-      bgColor = "black",
-      textPosition = "right",
-      accent,
-      fullBleed = false,
+      height = "short",
+      bleed = false,
+      textPosition = "on-left",
     }: Props,
     ref
   ) => {
     const blackTheme = "bg-brand-black text-brand-white";
     const whiteTheme = "bg-brand-white text-brand-black";
-    const theme = bgColor === "black" ? blackTheme : whiteTheme;
-    const flexReverse =
-      textPosition === "right" ? "tablet:flex-row-reverse" : "";
-    const absolute = fullBleed ? "tablet:absolute" : "";
-    const imageSizes = fullBleed ? "100vw" : "(max-width: 768px) 100vw, 50vw";
+    const onLeft = "tablet:col-start-1 tablet:col-end-2";
+    const onRight = "tablet:col-start-2 tablet:col-end-3";
+
+    const cardBleed = bleed && "col-start-1 col-end-3";
+    const cardHeight =
+      height === "short" ? "tablet:h-[490px]" : "tablet:h-[650px]";
+    const cardTheme = theme === "black" ? blackTheme : whiteTheme;
+
+    const cardTextPosition = textPosition === "on-right" ? onRight : onLeft;
+    const cardGridLayout =
+      textPosition === "on-right"
+        ? "tablet:grid-cols-[auto_495px] desktop:grid-cols-[auto_610px]"
+        : "tablet:grid-cols-[495px_auto] desktop:grid-cols-[610px_auto]";
 
     return (
       <section
         ref={ref}
-        className={`relative w-screen max-w-screen-desktop ${theme} tablet:flex ${flexReverse}`}>
-        <div className="relative h-[294px] w-full flex-shrink tablet:h-[650px]">
+        className={`mx-auto max-w-[1440px] ${cardTheme} tablet:grid ${cardHeight} ${cardGridLayout}`}>
+        <div
+          className={`relative h-[294px] ${cardBleed} tablet:row-start-1 tablet:h-full`}>
           <Image
             src={image.src}
             alt={image.alt}
-            priority
-            quality={100}
             fill
-            sizes={imageSizes}
-            placeholder="blur"
             className="object-cover"
+            sizes={bleed ? "100vw" : "(min-width:768px) 50vw, 100vw"}
+            priority
           />
         </div>
         <div
-          className={`relative flex max-w-[610px] ${absolute} bottom-0 left-0 right-[35%] top-0 flex-col items-start justify-center  tablet:flex-[1_0_64.5%]  desktop:flex-[1_0_42%]`}>
-          {accent && (
-            <motion.div
-              initial={{
-                opacity: 0,
-                scaleX: 0.1,
-              }}
-              animate={{
-                opacity: 1,
-                scaleX: 1,
-                transition: {
-                  delay: 0.2,
-                  type: "tween",
-                  ease: "easeOut",
-                },
-              }}
-              className="absolute left-8 top-0 block h-[6px] w-32 bg-brand-accent tablet:hidden"
-            />
-          )}
-          <div className="relative flex flex-col items-start gap-4 py-18 pl-8 pr-6 tablet:px-14 tablet:py-0 desktop:px-28">
-            {accent && (
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  scaleY: 0.1,
-                }}
-                animate={{
-                  opacity: 1,
-                  scaleY: 1,
-                  transition: {
-                    delay: 0.2,
-                    type: "tween",
-                    ease: "easeOut",
-                  },
-                }}
-                className="absolute bottom-0 left-0 top-0 hidden w-[6px] bg-brand-accent tablet:block"
-              />
-            )}
-            {children}
-          </div>
+          className={`relative row-start-1 flex items-center justify-center ${cardTextPosition} tablet:h-full`}>
+          {children}
         </div>
       </section>
     );
