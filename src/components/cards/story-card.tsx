@@ -2,7 +2,7 @@
 import * as Separator from "@radix-ui/react-separator";
 import { motion, Variants } from "framer-motion";
 
-import { storyData } from "@/data";
+import data from "@/data";
 import Link from "next/link";
 import ArrowIcon from "../icons/arrowIcon";
 import Image from "next/image";
@@ -29,7 +29,7 @@ const childVariant: Variants = {
   },
 };
 
-type Story = (typeof storyData.stories)[0];
+type Story = (typeof data.stories)[0];
 type Props = {
   data: Story;
   showDate?: boolean;
