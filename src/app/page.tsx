@@ -5,7 +5,7 @@ import HomeHero from "@components/home/home-hero-card";
 
 export default async function Home() {
   return (
-    <main className="mx-auto max-w-[1440px] pt-18">
+    <main>
       <HomeHero />
       <HerosGroup />
       <StoriesGroup />

@@ -4,7 +4,7 @@ import { FeaturesHeroCard } from "@/src/components/features/features-hero-card";
 
 export default function Features() {
   return (
-    <main className="mx-auto max-w-[1440px] pt-18">
+    <main className="mx-auto max-w-[1440px]">
       <FeaturesHeroCard />
       <FeaturesGroup grid />
       <Banner />

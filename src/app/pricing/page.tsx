@@ -5,7 +5,7 @@ import { PricingHeroCard } from "@/src/components/pricing/pricing-hero-card";
 
 export default function Pricing() {
   return (
-    <main className="mx-auto max-w-[1440px] pt-18">
+    <main className="mx-auto max-w-[1440px]">
       <PricingHeroCard />
       <PricingList />
       <PricingCompareTable />
