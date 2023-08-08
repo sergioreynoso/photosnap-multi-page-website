@@ -1,5 +1,5 @@
 import Footer from "@/src/components/footer";
-import Header from "@/src/components/header";
+import Header from "@/src/components/header/header";
 import "./globals.css";
 import { DM_Sans } from "next/font/google";
 
@@ -21,11 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en">
       <body
-        className={`${dmSans.className} h-full bg-brand-white text-sm font-normal text-brand-black`}>
+        className={`relative ${dmSans.className} bg-brand-white pt-16 text-sm font-normal text-brand-black`}>
         <Header />
-        {children}
+        <div className="mx-auto max-w-[1440px]">{children}</div>
         <Footer />
       </body>
     </html>
