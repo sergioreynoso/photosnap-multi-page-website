@@ -56,6 +56,7 @@ export const HeroCard = forwardRef<HTMLDivElement, Props>(
             className="object-cover"
             sizes={bleed ? "100vw" : "(min-width:768px) 50vw, 100vw"}
             priority
+            placeholder="blur"
           />
         </div>
         <div

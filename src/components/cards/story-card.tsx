@@ -48,6 +48,7 @@ export default function StoriesCard({ data, showDate = false }: Props) {
         <Image
           src={image.src}
           alt={image.alt}
+          placeholder="blur"
           fill={true}
           quality={100}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
