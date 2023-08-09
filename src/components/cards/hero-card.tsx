@@ -21,9 +21,10 @@ export const HeroCard = forwardRef<HTMLDivElement, Props>(
       children,
       theme = "black",
       image,
-      height = "short",
+      height = "tall",
       bleed = false,
       textPosition = "on-left",
+      ...props
     }: Props,
     ref
   ) => {
@@ -31,12 +32,10 @@ export const HeroCard = forwardRef<HTMLDivElement, Props>(
     const whiteTheme = "bg-brand-white text-brand-black";
     const onLeft = "tablet:col-start-1 tablet:col-end-2";
     const onRight = "tablet:col-start-2 tablet:col-end-3";
-
     const cardBleed = bleed && "col-start-1 col-end-3";
     const cardHeight =
       height === "short" ? "tablet:h-[490px]" : "tablet:h-[650px]";
     const cardTheme = theme === "black" ? blackTheme : whiteTheme;
-
     const cardTextPosition = textPosition === "on-right" ? onRight : onLeft;
     const cardGridLayout =
       textPosition === "on-right"
@@ -46,7 +45,8 @@ export const HeroCard = forwardRef<HTMLDivElement, Props>(
     return (
       <section
         ref={ref}
-        className={`mx-auto max-w-[1440px] ${cardTheme} tablet:grid ${cardHeight} ${cardGridLayout}`}>
+        className={`mx-auto max-w-[1440px] ${cardTheme} tablet:grid ${cardHeight} ${cardGridLayout}`}
+        {...props}>
         <div
           className={`relative h-[294px] ${cardBleed} tablet:row-start-1 tablet:h-full`}>
           <Image
