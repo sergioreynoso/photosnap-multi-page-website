@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`relative ${dmSans.className} bg-brand-white pt-16 text-sm font-normal text-brand-black`}>
+        className={`relative ${dmSans.className} bg-brand-white pt-[72px] text-sm font-normal text-brand-black`}>
         <Header />
         <div className="mx-auto max-w-[1440px]">{children}</div>
         <Footer />
