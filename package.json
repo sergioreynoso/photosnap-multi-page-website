@@ -21,7 +21,6 @@
     "eslint": "8.42.0",
     "eslint-config-next": "^13.4.6",
     "framer-motion": "^10.12.18",
-    "i": "^0.3.7",
     "next": "^13.4.9",
     "npm": "^9.7.1",
     "postcss": "8.4.24",
