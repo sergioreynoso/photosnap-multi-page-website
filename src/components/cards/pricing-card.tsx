@@ -1,6 +1,6 @@
 "use client";
 import PrimaryButton from "../buttons/primary-button";
-import { motion, Variants, AnimatePresence, MotionProps } from "framer-motion";
+import { motion, Variants, MotionProps } from "framer-motion";
 
 type Props = {
   dark?: boolean;
@@ -20,13 +20,15 @@ const priceVariant: Variants = {
   enter: {
     opacity: 0,
     transition: {
-      duration: 0.2,
+      ease: "easeIn",
+      duration: 0.5,
     },
   },
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.2,
+      ease: "easeIn",
+      duration: 0.5,
     },
   },
 };
