@@ -3,7 +3,6 @@ import React from "react";
 import PricingCard from "../cards/pricing-card";
 import data from "@/data";
 import ToggleButton from "../buttons/toggle-button";
-import { AnimatePresence } from "framer-motion";
 import { motion, Variants } from "framer-motion";
 
 const containerVariant: Variants = {
@@ -48,24 +47,23 @@ export default function PricingList() {
       </div>
 
       <div className="flex flex-col gap-6 pt-12 desktop:flex-row desktop:items-center desktop:gap-8">
-        <AnimatePresence mode="wait" initial={false}>
-          {data.pricing.map((price) => {
-            const { body, id, title, monthlyPrice, yearlyPrice } = price;
-            const isPro = title.toLocaleLowerCase() === "pro";
-            const planPrice = isMonthly ? monthlyPrice : yearlyPrice;
-            const paymentInterval = isMonthly ? "month" : "year";
-            return (
-              <PricingCard
-                key={planPrice}
-                dark={isPro}
-                body={body}
-                title={title}
-                price={planPrice}
-                paymentInterval={`per ${paymentInterval}`}
-              />
-            );
-          })}
-        </AnimatePresence>
+        {data.pricing.map((price) => {
+          const { body, title, monthlyPrice, yearlyPrice } = price;
+          const isPro = title.toLocaleLowerCase() === "pro";
+          const planPrice = isMonthly ? monthlyPrice : yearlyPrice;
+          const paymentInterval = isMonthly ? "month" : "year";
+
+          return (
+            <PricingCard
+              key={planPrice}
+              dark={isPro}
+              body={body}
+              title={title}
+              price={planPrice}
+              paymentInterval={`per ${paymentInterval}`}
+            />
+          );
+        })}
       </div>
     </motion.div>
   );
