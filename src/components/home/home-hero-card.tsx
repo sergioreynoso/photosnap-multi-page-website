@@ -1,8 +1,8 @@
 "use client";
 import { motion, Variants } from "framer-motion";
 import data from "@/data";
-import { HeroCard } from "@/src/components/cards/hero-card";
-import ArrowButton from "@/src/components/buttons/arrow-button";
+import { HeroCard } from "@components/cards/hero-card";
+import ArrowButton from "@components/buttons/arrow-button";
 
 const containerVariant: Variants = {
   hidden: { opacity: 0 },

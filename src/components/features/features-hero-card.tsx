@@ -1,5 +1,5 @@
 "use client";
-import { HeroCard } from "../cards/hero-card";
+import { HeroCard } from "@components/cards/hero-card";
 import data from "@/data";
 import { motion, Variants } from "framer-motion";
 

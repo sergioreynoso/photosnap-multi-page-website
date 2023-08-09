@@ -4,7 +4,7 @@ import { motion, Variants } from "framer-motion";
 
 import data from "@/data";
 import Link from "next/link";
-import ArrowIcon from "../icons/arrowIcon";
+import ArrowIcon from "@components/icons/arrowIcon";
 import Image from "next/image";
 
 const containerVariant: Variants = {

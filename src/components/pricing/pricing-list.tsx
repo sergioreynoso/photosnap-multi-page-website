@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import PricingCard from "../cards/pricing-card";
+import PricingCard from "@components/cards/pricing-card";
 import data from "@/data";
-import ToggleButton from "../buttons/toggle-button";
+import ToggleButton from "@components/buttons/toggle-button";
 import { motion, Variants } from "framer-motion";
 
 const containerVariant: Variants = {

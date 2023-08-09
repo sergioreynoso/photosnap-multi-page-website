@@ -1,6 +1,6 @@
-import FeaturesGroup from "@/src/components/layout-groups/product-features-group";
-import Banner from "@/src/components/cards/banner";
-import { FeaturesHeroCard } from "@/src/components/features/features-hero-card";
+import FeaturesGroup from "@components/layout-groups/product-features-group";
+import Banner from "@components/cards/banner";
+import { FeaturesHeroCard } from "@components/features/features-hero-card";
 
 export default function Features() {
   return (

@@ -1,7 +1,7 @@
 "use client";
-import Buttons from "@/src/components/design-system/buttons";
-import Colors from "@/src/components/design-system/colors";
-import Typography from "@/src/components/design-system/typography";
+import Buttons from "@components/design-system/buttons";
+import Colors from "@components/design-system/colors";
+import Typography from "@components/design-system/typography";
 
 export default function DesignSystem() {
   return (

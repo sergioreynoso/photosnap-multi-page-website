@@ -1,5 +1,5 @@
 import data from "@/data";
-import ProductFeaturesCard from "../cards/product-features-card";
+import ProductFeaturesCard from "@components/cards/product-features-card";
 
 type Props = {
   limit?: number;

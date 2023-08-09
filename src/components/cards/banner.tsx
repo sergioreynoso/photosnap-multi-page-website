@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import data from "@/data";
-import ArrowButton from "../buttons/arrow-button";
+import ArrowButton from "@components/buttons/arrow-button";
 import { motion, Variants } from "framer-motion";
 
 const containerVariant: Variants = {

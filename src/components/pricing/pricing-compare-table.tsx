@@ -1,6 +1,6 @@
 "use client";
 import data from "@/data";
-import CheckIcon from "../icons/checkIcon";
+import CheckIcon from "@components/icons/checkIcon";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { motion, Variants } from "framer-motion";
 

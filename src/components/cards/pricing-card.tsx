@@ -1,5 +1,5 @@
 "use client";
-import PrimaryButton from "../buttons/primary-button";
+import PrimaryButton from "@components/buttons/primary-button";
 import { motion, Variants, MotionProps } from "framer-motion";
 
 type Props = {

@@ -1,5 +1,5 @@
 import data from "@/data";
-import StoriesCard from "../cards/story-card";
+import StoriesCard from "@components/cards/story-card";
 
 type Props = {
   limit?: number;

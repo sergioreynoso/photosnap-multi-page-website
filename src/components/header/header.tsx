@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import HeaderMobileNavigation from "./header-mobile-navigation";
 import HeaderNavigation from "./header-navigation";
-import PrimaryButton from "../buttons/primary-button";
+import PrimaryButton from "@components/buttons/primary-button";
 import useIsCurrentRoute from "@/src/lib/hooks/useIsCurrentRoute";
 
 export default function Header() {
