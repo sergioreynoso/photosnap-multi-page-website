@@ -1,7 +1,7 @@
 "use client";
 import data from "@/data";
-import { HeroCard } from "../cards/hero-card";
-import ArrowButton from "../buttons/arrow-button";
+import { HeroCard } from "@components/cards/hero-card";
+import ArrowButton from "@components/buttons/arrow-button";
 import { motion, Variants } from "framer-motion";
 
 const containerVariant: Variants = {
@@ -52,7 +52,7 @@ type Props = {
   limit?: number;
 };
 
-export default function HerosGroup({ limit = 4 }: Props) {
+export default function PromoGroup({ limit = 4 }: Props) {
   const MotionArrowButton = motion(ArrowButton);
 
   return (
