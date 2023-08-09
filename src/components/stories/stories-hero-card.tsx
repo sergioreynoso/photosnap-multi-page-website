@@ -44,10 +44,10 @@ const arrowButtonVariant: Variants = {
   },
 };
 
-const StoriesHeroCard = () => {
-  const MotionHeroCard = motion(HeroCard);
-  const MotionArrowButton = motion(ArrowButton);
+const MotionHeroCard = motion(HeroCard);
+const MotionArrowButton = motion(ArrowButton);
 
+const StoriesHeroCard = () => {
   const { image, title, linkLabel, body, eyebrow, date, author } =
     data.heros.stories;
   return (
@@ -57,7 +57,6 @@ const StoriesHeroCard = () => {
         animate="visible"
         variants={containerVariant}
         image={image}
-        height="tall"
         bleed>
         <motion.div
           variants={childVariant}

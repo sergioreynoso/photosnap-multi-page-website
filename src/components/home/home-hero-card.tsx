@@ -12,7 +12,7 @@ const containerVariant: Variants = {
       type: "tween",
       ease: "easeInOut",
       duration: 1,
-      delayChildren: 0.2,
+      delayChildren: 0.5,
     },
   },
 };
@@ -45,10 +45,10 @@ const arrowButtonVariant: Variants = {
   },
 };
 
-const HomeHeroCard = () => {
-  const MotionHeroCard = motion(HeroCard);
-  const MotionArrowButton = motion(ArrowButton);
+const MotionHeroCard = motion(HeroCard);
+const MotionArrowButton = motion(ArrowButton);
 
+const HomeHeroCard = () => {
   const { body, image, linkLabel, title } = data.heros.home;
 
   return (

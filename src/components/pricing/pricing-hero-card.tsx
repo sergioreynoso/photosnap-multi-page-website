@@ -28,9 +28,10 @@ const childVariant: Variants = {
   },
 };
 
+const MotionHeroCard = motion(HeroCard);
+
 export const PricingHeroCard = () => {
   const { title, body, image } = data.heros.pricing;
-  const MotionHeroCard = motion(HeroCard);
 
   return (
     <div className="bg-brand-black">
