@@ -1,4 +1,4 @@
-import PromoCard from "@components/cards/banner";
+import BannerCard from "@components/cards/banner";
 import PricingList from "@components/pricing/pricing-list";
 import PricingCompareTable from "@components/pricing/pricing-compare-table";
 import { PricingHeroCard } from "@components/pricing/pricing-hero-card";
@@ -9,7 +9,7 @@ export default function Pricing() {
       <PricingHeroCard />
       <PricingList />
       <PricingCompareTable />
-      <PromoCard />
+      <BannerCard />
     </main>
   );
 }
