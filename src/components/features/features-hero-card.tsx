@@ -39,7 +39,8 @@ export const FeaturesHeroCard = () => {
         variants={containerVariant}
         initial="hidden"
         animate="visible"
-        image={image}>
+        image={image}
+        priority>
         <motion.span
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}

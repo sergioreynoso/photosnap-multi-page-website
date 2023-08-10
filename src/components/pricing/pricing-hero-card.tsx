@@ -39,7 +39,8 @@ export const PricingHeroCard = () => {
         image={image}
         variants={containerVariant}
         initial="hidden"
-        animate="visible">
+        animate="visible"
+        priority>
         <motion.span
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}

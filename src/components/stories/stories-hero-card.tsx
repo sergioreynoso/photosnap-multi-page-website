@@ -57,7 +57,8 @@ const StoriesHeroCard = () => {
         animate="visible"
         variants={containerVariant}
         image={image}
-        bleed>
+        bleed
+        priority>
         <motion.div
           variants={childVariant}
           className="relative flex flex-col items-start py-12 pl-8 pr-6 tablet:px-[54px] tablet:py-0 desktop:px-[112px]">

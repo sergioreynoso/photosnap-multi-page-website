@@ -57,7 +57,8 @@ const HomeHeroCard = () => {
       animate="visible"
       variants={containerVariant}
       image={image}
-      height="tall">
+      height="tall"
+      priority>
       <motion.span
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}

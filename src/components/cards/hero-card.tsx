@@ -13,6 +13,7 @@ type Props = {
   height?: "tall" | "short";
   bleed?: boolean;
   textPosition?: "on-right" | "on-left";
+  priority?: boolean;
 };
 
 export const HeroCard = forwardRef<HTMLDivElement, Props>(
@@ -24,6 +25,7 @@ export const HeroCard = forwardRef<HTMLDivElement, Props>(
       height = "tall",
       bleed = false,
       textPosition = "on-left",
+      priority = false,
       ...props
     }: Props,
     ref
@@ -55,7 +57,8 @@ export const HeroCard = forwardRef<HTMLDivElement, Props>(
             fill
             className="object-cover"
             sizes={bleed ? "100vw" : "(min-width:768px) 50vw, 100vw"}
-            priority
+            priority={priority}
+            loading={!priority ? "lazy" : undefined}
             placeholder="blur"
           />
         </div>
