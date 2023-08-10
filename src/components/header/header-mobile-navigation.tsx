@@ -9,9 +9,20 @@ import * as Dialog from "@radix-ui/react-dialog";
 import HamburgerBtn from "@components/buttons/hamburger-button";
 import PrimaryButton from "@components/buttons/primary-button";
 import useIsCurrentRoute from "@/src/lib/hooks/useIsCurrentRoute";
+import { useMediaQuery } from "react-responsive";
 
 export default function HeaderMobileNavigation() {
   const [open, setOpen] = React.useState(false);
+
+  const handleMediaQueryChange = (matches: boolean) => {
+    if (open) setOpen(false);
+  };
+
+  const isTabletSize = useMediaQuery(
+    { minWidth: 768 },
+    undefined,
+    handleMediaQueryChange
+  );
 
   const contentVariant: Variants = {
     initial: {
@@ -107,7 +118,7 @@ export default function HeaderMobileNavigation() {
               />
             </Dialog.Overlay>
             <Dialog.Content
-              className="translateX(-50%) group fixed top-[72px] z-[100] w-full origin-top transform bg-brand-white p-8"
+              className="translateX(-50%) group fixed top-[72px] z-[9999] w-full origin-top transform bg-brand-white p-8"
               asChild>
               <motion.div
                 variants={contentVariant}
