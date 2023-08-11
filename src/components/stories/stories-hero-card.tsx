@@ -1,4 +1,4 @@
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import data from "@/data";
 import { HeroCard } from "@/src/components/cards/hero/hero-card";
 import ArrowButton from "@components/buttons/arrow-button";
