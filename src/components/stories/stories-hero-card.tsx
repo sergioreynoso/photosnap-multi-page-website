@@ -1,6 +1,6 @@
 import { motion, Variants } from "framer-motion";
 import data from "@/data";
-import { HeroCard } from "@components/cards/hero-card";
+import { HeroCard } from "@/src/components/cards/hero/hero-card";
 import ArrowButton from "@components/buttons/arrow-button";
 import {
   arrowButtonVariant,
