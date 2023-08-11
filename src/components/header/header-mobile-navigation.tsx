@@ -18,11 +18,7 @@ export default function HeaderMobileNavigation() {
     if (open) setOpen(false);
   };
 
-  const isTabletSize = useMediaQuery(
-    { minWidth: 768 },
-    undefined,
-    handleMediaQueryChange
-  );
+  useMediaQuery({ minWidth: 768 }, undefined, handleMediaQueryChange);
 
   const contentVariant: Variants = {
     initial: {
@@ -32,18 +28,18 @@ export default function HeaderMobileNavigation() {
       scaleY: 1,
       transition: {
         type: "spring",
-        bounce: 0.2,
-        duration: 0.5,
-        delayChildren: 0.02,
-        staggerChildren: 0.1,
+        stiffness: 500,
+        damping: 50,
+        delayChildren: 0.15,
+        staggerChildren: 0.05,
       },
     },
     exit: {
       scaleY: 0,
       transition: {
-        type: "tween",
-        ease: "easeOut",
-        duration: 0.2,
+        type: "spring",
+        stiffness: 800,
+        damping: 50,
         when: "afterChildren",
       },
     },
@@ -64,7 +60,9 @@ export default function HeaderMobileNavigation() {
     exit: {
       opacity: 0,
       transition: {
-        duration: 0.2,
+        type: "tween",
+        ease: "easeIn",
+        duration: 0.1,
       },
     },
   };
