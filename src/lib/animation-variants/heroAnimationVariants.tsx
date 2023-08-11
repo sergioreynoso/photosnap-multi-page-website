@@ -40,11 +40,13 @@ export const heroTextVariant: Variants = {
 export const heroAccentVariant: Variants = {
   hidden: {
     opacity: 0,
-    scaleY: 0,
+    scaleX: "var(--scaleX-from,1)",
+    scaleY: "var(--scaleY-from,1)",
   },
   visible: {
     opacity: 1,
-    scaleY: 1,
+    scaleX: "var(--scaleX-to,1)",
+    scaleY: "var(--scaleY-to,1)",
     transition: SPRING,
   },
 };
