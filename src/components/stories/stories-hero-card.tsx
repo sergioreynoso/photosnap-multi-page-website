@@ -2,47 +2,12 @@ import { motion, Variants } from "framer-motion";
 import data from "@/data";
 import { HeroCard } from "@components/cards/hero-card";
 import ArrowButton from "@components/buttons/arrow-button";
-
-const containerVariant: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      type: "tween",
-      ease: "easeInOut",
-      duration: 1,
-      delayChildren: 0.5,
-    },
-  },
-};
-
-const childVariant: Variants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 1,
-    },
-  },
-};
-
-const arrowButtonVariant: Variants = {
-  hidden: {
-    x: "-20%",
-    opacity: 0,
-  },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      type: "tween",
-      ease: "easeOut",
-    },
-  },
-};
+import {
+  arrowButtonVariant,
+  heroTextContainerVariant,
+  heroTextVariant,
+  heroVariant,
+} from "@/src/lib/animation-variants/heroAnimationVariants";
 
 const MotionHeroCard = motion(HeroCard);
 const MotionArrowButton = motion(ArrowButton);
@@ -55,22 +20,32 @@ const StoriesHeroCard = () => {
       <MotionHeroCard
         initial="hidden"
         animate="visible"
-        variants={containerVariant}
+        variants={heroVariant}
         image={image}
         bleed
         priority>
         <motion.div
-          variants={childVariant}
+          variants={heroTextContainerVariant}
           className="relative flex flex-col items-start py-12 pl-8 pr-6 tablet:px-[54px] tablet:py-0 desktop:px-[112px]">
-          <p className="mb-4 text-xs uppercase">{eyebrow}</p>
-          <h1 className="mb-4 text-2xl font-bold uppercase tablet:mb-[21px] tablet:text-3xl">
+          <motion.p
+            variants={heroTextVariant}
+            className="mb-4 text-xs uppercase">
+            {eyebrow}
+          </motion.p>
+          <motion.h1
+            variants={heroTextVariant}
+            className="mb-4 text-2xl font-bold uppercase tablet:mb-[21px] tablet:text-3xl">
             {title}
-          </h1>
-          <p className="mb-6 text-[13px]">
+          </motion.h1>
+          <motion.p variants={heroTextVariant} className="mb-6 text-[13px]">
             <span className="mr-2 opacity-60">{date}</span>
             {`by ${author}`}
-          </p>
-          <p className="mb-6 text-sm opacity-60">{body}</p>
+          </motion.p>
+          <motion.p
+            variants={heroTextVariant}
+            className="mb-6 text-sm opacity-60">
+            {body}
+          </motion.p>
           <MotionArrowButton variants={arrowButtonVariant} href={``}>
             {linkLabel}
           </MotionArrowButton>

@@ -3,50 +3,12 @@ import data from "@/data";
 import { HeroCard } from "@components/cards/hero-card";
 import ArrowButton from "@components/buttons/arrow-button";
 import { motion, Variants } from "framer-motion";
-
-const containerVariant: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 1,
-      type: "tween",
-      ease: "easeInOut",
-      delayChildren: 0.5,
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const childVariant: Variants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      type: "tween",
-      ease: "easeOut",
-      duration: 0.5,
-    },
-  },
-};
-
-const arrowButtonVariant: Variants = {
-  hidden: {
-    x: -20,
-    opacity: 0,
-  },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: "tween",
-      ease: "easeOut",
-      duration: 0.5,
-    },
-  },
-};
+import {
+  arrowButtonVariant,
+  heroTextContainerVariant,
+  heroTextVariant,
+  heroVariant,
+} from "@/src/lib/animation-variants/heroAnimationVariants";
 
 type Props = {
   limit?: number;
@@ -66,7 +28,7 @@ export default function PromoGroup({ limit = 4 }: Props) {
             <div key={index} className={`bg-brand-white`}>
               <MotionHeroCard
                 key={index}
-                variants={containerVariant}
+                variants={heroVariant}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.4 }}
@@ -74,14 +36,16 @@ export default function PromoGroup({ limit = 4 }: Props) {
                 theme="white"
                 height="tall"
                 textPosition={index % 2 === 0 ? "on-right" : "on-left"}>
-                <div className="relative flex flex-col items-start py-12 pl-8 pr-6 tablet:px-[54px] tablet:py-0 desktop:px-[112px]">
+                <motion.div
+                  variants={heroTextContainerVariant}
+                  className="relative flex flex-col items-start py-12 pl-8 pr-6 tablet:px-[54px] tablet:py-0 desktop:px-[112px]">
                   <motion.h2
-                    variants={childVariant}
+                    variants={heroTextVariant}
                     className="mb-4 text-2xl font-bold uppercase tablet:mb-[21px] tablet:text-3xl">
                     {title}
                   </motion.h2>
                   <motion.p
-                    variants={childVariant}
+                    variants={heroTextVariant}
                     className="text-sm opacity-60">
                     {body}
                   </motion.p>
@@ -90,7 +54,7 @@ export default function PromoGroup({ limit = 4 }: Props) {
                     href={`/${route}`}>
                     {linkLabel}
                   </MotionArrowButton>
-                </div>
+                </motion.div>
               </MotionHeroCard>
             </div>
           );
