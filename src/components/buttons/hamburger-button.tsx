@@ -11,7 +11,7 @@ const HamburgerBtn = React.forwardRef<HTMLButtonElement, Props>(
     return (
       <button {...props} ref={ref} className="relative h-10 w-10">
         <motion.span
-          initial={false}
+          initial={{ x: "50%" }}
           animate={
             open
               ? { y: [-3, 0, 0], rotate: [0, 0, 45] }
@@ -22,7 +22,7 @@ const HamburgerBtn = React.forwardRef<HTMLButtonElement, Props>(
         />
         <VisuallyHidden.Root>Navigation</VisuallyHidden.Root>
         <motion.span
-          initial={false}
+          initial={{ x: "50%" }}
           animate={
             open
               ? { y: [3, 0, 0], rotate: [0, 0, -45] }
@@ -38,6 +38,8 @@ const HamburgerBtn = React.forwardRef<HTMLButtonElement, Props>(
 
 const TRANSITION = {
   duration: 0.3,
+
+  // times: [1, 1, 1],
 };
 
 HamburgerBtn.displayName = "HamburgerBtn";
