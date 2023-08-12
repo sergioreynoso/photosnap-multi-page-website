@@ -101,7 +101,7 @@ export default function HeaderMobileNavigation() {
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
-        <HamburgerBtn />
+        <HamburgerBtn open={open} />
       </Dialog.Trigger>
       <AnimatePresence mode="sync" initial={false}>
         {open && (
