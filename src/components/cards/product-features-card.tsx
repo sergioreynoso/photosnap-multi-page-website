@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { ImageAttributes } from "./hero-card";
+import { ImageAttributes } from "./hero/hero-card";
 import { motion, Variants } from "framer-motion";
 
 const containerVariant: Variants = {
