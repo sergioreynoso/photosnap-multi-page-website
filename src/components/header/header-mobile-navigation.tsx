@@ -11,92 +11,57 @@ import PrimaryButton from "@components/buttons/primary-button";
 import useIsCurrentRoute from "@/src/lib/hooks/useIsCurrentRoute";
 import { useMediaQuery } from "react-responsive";
 
+const contentVariant: Variants = {
+  initial: {
+    scaleY: 0,
+  },
+  visible: {
+    scaleY: 1,
+    transition: {
+      type: "spring",
+      stiffness: 500,
+      damping: 50,
+      delayChildren: 0.15,
+      staggerChildren: 0.05,
+    },
+  },
+  exit: {
+    scaleY: 0,
+    transition: {
+      type: "spring",
+      stiffness: 800,
+      damping: 50,
+      when: "afterChildren",
+    },
+  },
+};
+
+const navigationItemVarian: Variants = {
+  initial: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      type: "tween",
+      ease: "easeOut",
+      duration: 0.2,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      type: "tween",
+      ease: "easeIn",
+      duration: 0.1,
+    },
+  },
+};
+
 export default function HeaderMobileNavigation() {
   const [open, setOpen] = React.useState(false);
-
-  const handleMediaQueryChange = (matches: boolean) => {
-    if (open) setOpen(false);
-  };
-
+  const handleMediaQueryChange = (matches: boolean) => open && setOpen(false);
   useMediaQuery({ minWidth: 768 }, undefined, handleMediaQueryChange);
-
-  const contentVariant: Variants = {
-    initial: {
-      scaleY: 0,
-    },
-    visible: {
-      scaleY: 1,
-      transition: {
-        type: "spring",
-        stiffness: 500,
-        damping: 50,
-        delayChildren: 0.15,
-        staggerChildren: 0.05,
-      },
-    },
-    exit: {
-      scaleY: 0,
-      transition: {
-        type: "spring",
-        stiffness: 800,
-        damping: 50,
-        when: "afterChildren",
-      },
-    },
-  };
-
-  const navigationItemVarian: Variants = {
-    initial: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        type: "tween",
-        ease: "easeOut",
-        duration: 0.2,
-      },
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        type: "tween",
-        ease: "easeIn",
-        duration: 0.1,
-      },
-    },
-  };
-
-  const Item = ({ route, label }: { route: string; label: string }) => {
-    const { isCurrentRoute } = useIsCurrentRoute(route);
-
-    return (
-      <NavigationMenu.Item asChild>
-        <motion.li variants={navigationItemVarian}>
-          <NavigationMenu.Link asChild active={isCurrentRoute}>
-            <Link
-              href={route}
-              className=" hover:opacity-30"
-              onClick={() => setOpen(false)}>
-              {label}
-            </Link>
-          </NavigationMenu.Link>
-        </motion.li>
-      </NavigationMenu.Item>
-    );
-  };
-
-  const BigButton = () => (
-    <NavigationMenu.Item asChild>
-      <motion.li variants={navigationItemVarian}>
-        <NavigationMenu.Link asChild>
-          <PrimaryButton href="#" onClick={() => setOpen(false)}>
-            Get and Invite
-          </PrimaryButton>
-        </NavigationMenu.Link>
-      </motion.li>
-    </NavigationMenu.Item>
-  );
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
@@ -105,7 +70,7 @@ export default function HeaderMobileNavigation() {
       </Dialog.Trigger>
       <AnimatePresence mode="sync" initial={false}>
         {open && (
-          <Dialog.Portal forceMount>
+          <Dialog.Portal forceMount style={{ backgroundColor: "red" }}>
             <Dialog.Overlay
               className="fixed inset-0 top-[72px] bg-brand-black/50"
               asChild>
@@ -132,15 +97,20 @@ export default function HeaderMobileNavigation() {
                 </VisuallyHidden.Root>
                 <NavigationMenu.Root className="text-center text-sm font-bold uppercase tracking-[2.5px] text-brand-black tablet:text-xs">
                   <NavigationMenu.List className="item-center flex flex-col gap-3 tablet:flex-row tablet:items-center tablet:gap-8 desktop:h-full">
-                    <Item route="/stories" label="Stories" />
-                    <Item route="/features" label="Features" />
-                    <Item route="/pricing" label="Pricing" />
+                    <Home setOpen={setOpen} />
+                    <Item setOpen={setOpen} route="/stories" label="Stories" />
+                    <Item
+                      setOpen={setOpen}
+                      route="/features"
+                      label="Features"
+                    />
+                    <Item setOpen={setOpen} route="/pricing" label="Pricing" />
                     <Separator.Root
                       className="my-[15px] bg-brand-grey data-[orientation=horizontal]:h-px data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px tablet:hidden"
                       asChild>
                       <motion.div variants={navigationItemVarian} />
                     </Separator.Root>
-                    <BigButton />
+                    <BigButton setOpen={setOpen} />
                   </NavigationMenu.List>
                 </NavigationMenu.Root>
                 <Dialog.Close asChild>
@@ -158,3 +128,63 @@ export default function HeaderMobileNavigation() {
     </Dialog.Root>
   );
 }
+
+const Item = ({
+  setOpen,
+  route,
+  label,
+}: {
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  route: string;
+  label: string;
+}) => {
+  const { isCurrentRoute } = useIsCurrentRoute(route);
+
+  return (
+    <NavigationMenu.Item asChild>
+      <motion.li variants={navigationItemVarian}>
+        <NavigationMenu.Link asChild active={isCurrentRoute}>
+          <Link
+            href={route}
+            className=" hover:opacity-30"
+            onClick={() => setOpen(false)}>
+            {label}
+          </Link>
+        </NavigationMenu.Link>
+      </motion.li>
+    </NavigationMenu.Item>
+  );
+};
+
+const BigButton = ({
+  setOpen,
+}: {
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => (
+  <NavigationMenu.Item asChild>
+    <motion.li variants={navigationItemVarian}>
+      <NavigationMenu.Link asChild>
+        <PrimaryButton href="#" onClick={() => setOpen(false)}>
+          Get and Invite
+        </PrimaryButton>
+      </NavigationMenu.Link>
+    </motion.li>
+  </NavigationMenu.Item>
+);
+
+const Home = ({
+  setOpen,
+}: {
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => (
+  <NavigationMenu.Item asChild>
+    <li className="absolute -translate-x-[8px] -translate-y-[90px]">
+      <NavigationMenu.Link asChild>
+        <Link
+          href={"/"}
+          onClick={() => setOpen(false)}
+          className="block h-10 w-[170px]"></Link>
+      </NavigationMenu.Link>
+    </li>
+  </NavigationMenu.Item>
+);
