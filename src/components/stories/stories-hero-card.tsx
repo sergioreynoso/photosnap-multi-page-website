@@ -28,21 +28,21 @@ const StoriesHeroCard = () => {
           variants={heroTextContainerVariant}
           className="relative flex flex-col items-start py-12 pl-8 pr-6 tablet:px-[54px] tablet:py-0 desktop:px-[112px]">
           <motion.p
-            variants={heroTextVariant}
+            variants={heroTextVariant()}
             className="mb-4 text-xs uppercase">
             {eyebrow}
           </motion.p>
           <motion.h1
-            variants={heroTextVariant}
+            variants={heroTextVariant()}
             className="mb-4 text-2xl font-bold uppercase tablet:mb-[21px] tablet:text-3xl">
             {title}
           </motion.h1>
-          <motion.p variants={heroTextVariant} className="mb-6 text-[13px]">
+          <motion.p variants={heroTextVariant()} className="mb-6 text-[13px]">
             <span className="mr-2 opacity-60">{date}</span>
             {`by ${author}`}
           </motion.p>
           <motion.p
-            variants={heroTextVariant}
+            variants={heroTextVariant()}
             className="mb-6 text-sm opacity-60">
             {body}
           </motion.p>
