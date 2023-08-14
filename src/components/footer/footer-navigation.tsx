@@ -32,7 +32,7 @@ export default function FooterNavigation({ label }: Props) {
       <VisuallyHidden>
         <h2 id={id}>{label}</h2>
       </VisuallyHidden>
-      <NavigationMenu.List className="flex flex-col gap-5  tablet:flex-row desktop:h-full desktop:flex-col desktop:items-start desktop:gap-8">
+      <NavigationMenu.List className="flex flex-col gap-5  tablet:flex-row desktop:h-full desktop:-translate-x-[10px] desktop:flex-col desktop:items-start desktop:gap-5">
         <Item route="/" label="Home" />
         <Item route="/stories" label="Stories" />
         <Item route="/features" label="Features" />
