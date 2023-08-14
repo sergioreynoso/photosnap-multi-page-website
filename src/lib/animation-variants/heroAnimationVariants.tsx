@@ -29,13 +29,13 @@ export const heroTextContainerVariant: Variants = {
   },
 };
 
-export const heroTextVariant: Variants = {
-  hidden: { opacity: 0 },
+export const heroTextVariant = (opacityFrom = 0, opacityTo = 1) => ({
+  hidden: { opacity: opacityFrom },
   visible: {
-    opacity: 1,
+    opacity: opacityTo,
     transition: TWEEN,
   },
-};
+});
 
 export const heroAccentVariant: Variants = {
   hidden: {
