@@ -1,4 +1,4 @@
-import Footer from "@/src/components/footer";
+import Footer from "@/src/components/footer/footer";
 import Header from "@/src/components/header/header";
 import "./globals.css";
 import { DM_Sans } from "next/font/google";

@@ -9,7 +9,12 @@ import ArrowButton from "../buttons/arrow-button";
 export default function Footer() {
   const Logo = () => (
     <Link href="/">
-      <Image src={LogoIMG} alt="logo" className="h-4 w-[170px]" priority />
+      <Image
+        src={LogoIMG}
+        alt="logo"
+        className="h-4 w-[170px] translate-x-1"
+        priority
+      />
     </Link>
   );
 
@@ -26,7 +31,7 @@ export default function Footer() {
   );
 
   return (
-    <footer className="h-[540px] w-full bg-brand-black px-6 py-14 text-brand-white tablet:h-[284px] tablet:px-10 tablet:py-16">
+    <footer className="h-[540px] w-full bg-brand-black px-6 py-14 text-brand-white tablet:h-[284px] tablet:px-10 tablet:py-16 desktop:h-[250px]">
       <div className="mx-auto h-full w-full max-w-[1110px]">
         <div className="flex  flex-col items-center justify-between gap-8 tablet:hidden">
           <Logo />
@@ -53,7 +58,7 @@ export default function Footer() {
         </div>
         {/* Desktop */}
         <div className="hidden h-full justify-between gap-32 desktop:flex">
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col items-center justify-between">
             <Logo />
             <SocialIcons />
           </div>
