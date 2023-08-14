@@ -28,12 +28,12 @@ const HeaderNavigation = ({ label }: Props) => {
   return (
     <div className="hidden tablet:block">
       <NavigationMenu.Root
-        className="text-center text-sm font-bold uppercase tracking-[2.5px] text-brand-black tablet:text-xs"
+        className="-translate-x-[5px] text-xs font-bold uppercase"
         aria-labelledby={id}>
         <VisuallyHidden>
           <h2 id={id}>{label}</h2>
         </VisuallyHidden>
-        <NavigationMenu.List className="flex flex-col items-center gap-3 tablet:flex-row tablet:items-center tablet:gap-8 desktop:h-full">
+        <NavigationMenu.List className="flex gap-9">
           <Item route="/stories" label="Stories" />
           <Item route="/features" label="Features" />
           <Item route="/pricing" label="Pricing" />
