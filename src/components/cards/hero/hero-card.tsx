@@ -10,7 +10,7 @@ type Props = {
   children?: ReactNode;
   theme?: "black" | "white";
   image: ImageAttributes;
-  height?: "tall" | "short";
+  height?: "short" | "medium" | "tall";
   bleed?: boolean;
   textPosition?: "on-right" | "on-left";
   priority?: boolean;
@@ -35,8 +35,7 @@ export const HeroCard = forwardRef<HTMLDivElement, Props>(
     const onLeft = "tablet:col-start-1 tablet:col-end-2";
     const onRight = "tablet:col-start-2 tablet:col-end-3";
     const cardBleed = bleed && "col-start-1 col-end-3";
-    const cardHeight =
-      height === "short" ? "tablet:h-[490px]" : "tablet:h-[650px]";
+
     const cardTheme = theme === "black" ? blackTheme : whiteTheme;
     const cardTextPosition = textPosition === "on-right" ? onRight : onLeft;
     const cardGridLayout =
@@ -47,7 +46,9 @@ export const HeroCard = forwardRef<HTMLDivElement, Props>(
     return (
       <section
         ref={ref}
-        className={`mx-auto max-w-[1440px] ${cardTheme} tablet:grid ${cardHeight} ${cardGridLayout}`}
+        className={`mx-auto max-w-[1440px] ${cardTheme} tablet:grid ${cardHeight(
+          height
+        )} ${cardGridLayout}`}
         {...props}>
         <div
           className={`relative h-[294px] ${cardBleed} tablet:row-start-1 tablet:h-full`}>
@@ -70,5 +71,16 @@ export const HeroCard = forwardRef<HTMLDivElement, Props>(
     );
   }
 );
+
+function cardHeight(height: "tall" | "medium" | "short") {
+  switch (height) {
+    case "short":
+      return "tablet:h-[490px]";
+    case "medium":
+      return "tablet:h-[600px]";
+    case "tall":
+      return "tablet:h-[650px]";
+  }
+}
 
 HeroCard.displayName = "HeroCard";
