@@ -4,7 +4,8 @@ import HomeDesignedForEveryone from "@/public/photography/home/designed-for-ever
 const data = [
   {
     id: 1,
-    title: "beautiful  stories every time.",
+    title: `beautiful  stories 
+    every time`,
     body: "We provide design templates to ensure your stories look terrific. Easily add photos, text, embed maps and media from other networks. Then share your story with everyone.",
     image: {
       src: HomeBeautifulStories,
@@ -15,7 +16,7 @@ const data = [
   },
   {
     id: 2,
-    title: "designed for everyone.",
+    title: "designed for everyone",
     body: "Photosnap can help you create stories that resonate with your audience. Our tool is designed for photographers of all levels, brands, businesses you name it.",
     image: {
       src: HomeDesignedForEveryone,
