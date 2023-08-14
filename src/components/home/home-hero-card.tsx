@@ -30,16 +30,14 @@ const HomeHeroCard = () => {
         priority>
         <motion.div
           variants={heroTextContainerVariant}
-          className="relative flex flex-col items-start py-12 pl-8 pr-6 tablet:px-[54px] tablet:py-0 desktop:px-[112px]">
+          className="relative flex translate-y-2 flex-col items-start py-12 pl-8 pr-6 tablet:px-[54px] tablet:py-0 desktop:px-[112px]">
           <MotionHeroAccentBar variants={heroAccentVariant} />
           <motion.h1
-            variants={heroTextVariant}
-            className="mb-4 text-2xl font-bold uppercase tablet:mb-[21px] tablet:text-3xl">
+            variants={heroTextVariant()}
+            className="mb-4 whitespace-pre-line text-2xl font-bold uppercase tablet:mb-[21px] tablet:text-3xl">
             {title}
           </motion.h1>
-          <motion.p
-            variants={heroTextVariant}
-            className="mb-6 text-sm opacity-60">
+          <motion.p variants={heroTextVariant(0, 0.6)} className="mb-9 text-sm">
             {body}
           </motion.p>
           <MotionArrowButton variants={arrowButtonVariant} href={``}>
