@@ -25,7 +25,7 @@ const data = [
     },
     title: "The Mountains",
     author: "John Appleseed",
-    linkLabel: "stories",
+    linkLabel: "read story",
     route: "stories",
   },
   {
@@ -37,7 +37,7 @@ const data = [
     },
     title: "Sunset Cityscape",
     author: "Benjamin Cruz",
-    linkLabel: "stories",
+    linkLabel: "read story",
     route: "stories",
   },
   {
@@ -49,7 +49,7 @@ const data = [
     },
     title: "18 Days Voyage",
     author: "Alexie Borodin",
-    linkLabel: "stories",
+    linkLabel: "read story",
     route: "stories",
   },
   {
@@ -58,7 +58,7 @@ const data = [
     image: { src: StoriesArchitectural, alt: "looking up abstract building" },
     title: "Architectural",
     author: "Samantha Brooke",
-    linkLabel: "stories",
+    linkLabel: "read story",
     route: "stories",
   },
   {
@@ -70,7 +70,7 @@ const data = [
     },
     title: "World Tour 2019",
     author: "Timothy Wagner",
-    linkLabel: "stories",
+    linkLabel: "read story",
     route: "stories",
   },
   {
@@ -82,7 +82,7 @@ const data = [
     },
     title: "Unforeseen Corners",
     author: "William Malcolm",
-    linkLabel: "stories",
+    linkLabel: "read story",
     route: "stories",
   },
   {
@@ -91,7 +91,7 @@ const data = [
     image: { src: StoriesKingOnAfrica, alt: "close up of a lion's face" },
     title: "King on Africa: Part II",
     author: "Tim Hillenburg",
-    linkLabel: "stories",
+    linkLabel: "read story",
     route: "stories",
   },
   {
@@ -103,7 +103,7 @@ const data = [
     },
     title: "The Trip to Nowhere",
     author: "Felicia Rourke",
-    linkLabel: "stories",
+    linkLabel: "read story",
     route: "stories",
   },
   {
@@ -115,7 +115,7 @@ const data = [
     },
     title: "Rage of The Sea",
     author: "Mohammed Abdul",
-    linkLabel: "stories",
+    linkLabel: "read story",
     route: "stories",
   },
   {
@@ -124,7 +124,7 @@ const data = [
     image: { src: StoriesRunningFree, alt: "two horses running" },
     title: "Running Free",
     author: "Michelle",
-    linkLabel: "stories",
+    linkLabel: "read story",
     route: "stories",
   },
   {
@@ -133,7 +133,7 @@ const data = [
     image: { src: StoriesBehindTheWaves, alt: "big wave crashing" },
     title: "Behind the Waves",
     author: " Lamarr Wilson",
-    linkLabel: "stories",
+    linkLabel: "read story",
     route: "stories",
   },
   {
@@ -145,7 +145,7 @@ const data = [
     },
     title: "Calm Waters",
     author: "Samantha Brooke",
-    linkLabel: "stories",
+    linkLabel: "read story",
     route: "stories",
   },
   {
@@ -154,7 +154,7 @@ const data = [
     image: { src: StoriesMilkyWay, alt: "the milky way galaxy" },
     title: "The Milky Way",
     author: "Benjamin Cruz",
-    linkLabel: "stories",
+    linkLabel: "read story",
     route: "stories",
   },
   {
@@ -166,7 +166,7 @@ const data = [
     },
     title: "Night at The Dark Forest",
     author: "Mohammed Abdul",
-    linkLabel: "stories",
+    linkLabel: "read story",
     route: "stories",
   },
   {
@@ -175,7 +175,7 @@ const data = [
     image: { src: StoriesSomwarpet, alt: "orange flowers" },
     title: "Somwarpet’s Beauty",
     author: "Michelle",
-    linkLabel: "stories",
+    linkLabel: "read story",
     route: "stories",
   },
   {
@@ -187,7 +187,7 @@ const data = [
     },
     title: "Land of Dreams",
     author: "William Malcolm",
-    linkLabel: "stories",
+    linkLabel: "read story",
     route: "stories",
   },
 ];
