@@ -60,7 +60,7 @@ export default function StoriesCard({ data, showDate = false }: Props) {
             className="inline-block text-lg font-bold">
             {title}
           </motion.h2>
-          <motion.p variants={childVariant} className="mb-4 text-[13px]">
+          <motion.p variants={childVariant} className="mb-0 text-[13px]">
             {`by ${author}`}
           </motion.p>
           <motion.div variants={childVariant} className="mb-[20px] w-full">
