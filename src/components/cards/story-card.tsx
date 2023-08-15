@@ -53,17 +53,17 @@ export default function StoriesCard({ data, showDate = false }: Props) {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover mix-blend-multiply"
         />
-        <div className="absolute bottom-0 left-0 right-0 flex flex-col items-start px-10 pb-9 ">
+        <div className="absolute bottom-0 left-0 right-0 flex flex-col items-start px-10 pb-10 ">
           {showDate && <p>{date}</p>}
           <motion.h2
             variants={childVariant}
             className="inline-block text-lg font-bold">
             {title}
           </motion.h2>
-          <motion.p variants={childVariant} className="text-[13px]">
+          <motion.p variants={childVariant} className="mb-4 text-[13px]">
             {`by ${author}`}
           </motion.p>
-          <motion.div variants={childVariant} className="my-[15px] w-full">
+          <motion.div variants={childVariant} className="mb-[20px] w-full">
             <Separator.Root
               className="bg-brand-grey opacity-25 data-[orientation=horizontal]:h-px data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px"
               orientation="horizontal"
