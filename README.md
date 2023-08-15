@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [https://photosnap-multi-page-website-nine.vercel.app](https://photosnap-multi-page-website-nine.vercel.app/)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/nextjs-13-app-router-tailwingcss-radix-ui-framer-motion-hn1CwL0r9n)
+- Live Site URL: [https://photosnap-multi-page-website-nine.vercel.app](https://photosnap-multi-page-website-tau.vercel.app/)
 
 ## My process
 
