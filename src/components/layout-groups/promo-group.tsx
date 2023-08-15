@@ -43,7 +43,7 @@ export default function PromoGroup({ limit = 4 }: Props) {
                   {title}
                 </motion.h2>
                 <motion.p
-                  variants={heroTextVariant()}
+                  variants={heroTextVariant(0, 0.6)}
                   className="mb-9 text-sm opacity-60">
                   {body}
                 </motion.p>
