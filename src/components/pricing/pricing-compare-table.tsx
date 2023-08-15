@@ -21,8 +21,7 @@ export default function PricingCompareTable() {
     <motion.section
       variants={containerVariant}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
+      animate="visible"
       className="flex flex-col items-center px-7 pb-16 pt-8 tablet:px-10">
       <h1 className="text-3xl font-bold uppercase">Compare</h1>
       <div className="w-full max-w-[730px] pt-16">

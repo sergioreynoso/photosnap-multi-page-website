@@ -39,8 +39,7 @@ export default function ProductFeaturesCard({ children, image }: Props) {
     <motion.div
       variants={containerVariant}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.5 }}
+      animate="visible"
       className="flex max-w-[350px] flex-col items-center gap-12 desktop:px-0">
       <motion.div
         variants={childVariant}

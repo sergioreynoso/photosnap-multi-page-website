@@ -25,8 +25,7 @@ export default function PricingList() {
     <motion.div
       variants={containerVariant}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
+      animate="visible"
       className="relative isolate mx-auto flex max-w-[1110px] flex-col items-center px-7 py-16 tablet:px-10 desktop:py-[120px]">
       <div className="sticky  top-[72px] z-10 flex w-full  bg-brand-white py-4 desktop:static desktop:mb-0">
         <div className="flex w-full -translate-x-4 items-center justify-center gap-8">

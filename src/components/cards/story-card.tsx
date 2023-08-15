@@ -42,8 +42,7 @@ export default function StoriesCard({ data, showDate = false }: Props) {
       <motion.div
         variants={containerVariant}
         initial="initial"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.4 }}
+        animate="visible"
         className="relative h-[375px] w-full flex-auto  bg-brand-white bg-gradient-to-t from-brand-black/60 to-brand-black/0 text-brand-white transition-transform group-hover:-translate-y-6 motion-reduce:transition-none tablet:h-[500px] tablet:via-brand-black/0">
         <Image
           src={image.src}

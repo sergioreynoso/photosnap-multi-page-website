@@ -23,8 +23,7 @@ export default function BannerCard() {
     <motion.div
       variants={containerVariant}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
+      animate="visible"
       className="relative mx-auto h-[288px] w-full max-w-[1440px]">
       <span className="absolute left-8 top-0 block h-[6px] w-32 bg-brand-accent tablet:hidden" />
       <Image
