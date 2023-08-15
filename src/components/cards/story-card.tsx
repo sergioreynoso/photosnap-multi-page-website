@@ -65,7 +65,7 @@ export default function StoriesCard({ data, showDate = false }: Props) {
           </motion.p>
           <motion.div variants={childVariant} className="my-[15px] w-full">
             <Separator.Root
-              className="bg-brand-grey data-[orientation=horizontal]:h-px data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px"
+              className="bg-brand-grey opacity-25 data-[orientation=horizontal]:h-px data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px"
               orientation="horizontal"
             />
           </motion.div>
