@@ -6,23 +6,28 @@ import Link from "next/link";
 import { useId } from "react";
 
 type Props = {
-  label: string;
+  routes: {
+    route: string;
+    label: string;
+  }[];
 };
 
-const Navigation = ({ label }: Props) => {
+const defaultRoute = [
+  {
+    route: "/",
+    label: "Home",
+  },
+];
+
+const Navigation = ({ routes = defaultRoute }: Props) => {
   const id = useId();
   return (
     <div className="hidden tablet:block">
-      <NavigationMenu.Root
-        className="-translate-x-[5px] text-xs font-bold uppercase"
-        aria-labelledby={id}>
-        <VisuallyHidden>
-          <h2 id={id}>{label}</h2>
-        </VisuallyHidden>
+      <NavigationMenu.Root className="-translate-x-[5px] text-xs font-bold uppercase">
         <NavigationMenu.List className="flex gap-9">
-          <Item route="/stories" label="Stories" />
-          <Item route="/features" label="Features" />
-          <Item route="/pricing" label="Pricing" />
+          {routes.map(({ route, label }) => (
+            <Item key={route} route={route} label={label} />
+          ))}
         </NavigationMenu.List>
       </NavigationMenu.Root>
     </div>

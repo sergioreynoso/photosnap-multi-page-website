@@ -6,9 +6,13 @@ import MobileNavigation from "@/src/components/navigation/mobile-navigation";
 import Navigation from "@/src/components/navigation/navigation";
 import PrimaryButton from "@components/buttons/primary-button";
 import useIsCurrentRoute from "@/src/lib/hooks/useIsCurrentRoute";
+import data from "@/data";
 
 export default function Header() {
   const { isCurrentRoute } = useIsCurrentRoute("/");
+
+  //Removes the first route (Home) in the array
+  const routes = data.routes.slice(1);
 
   return (
     <header className="fixed left-0 right-0 top-0 z-10 flex h-[72px] max-w-full justify-center bg-brand-white px-6 tablet:px-10">
@@ -16,7 +20,7 @@ export default function Header() {
         <Link href="/" {...(isCurrentRoute ? { "aria-current": "page" } : {})}>
           <Image src={Logo} alt="logo" priority className="h-4 w-[170px]" />
         </Link>
-        <Navigation label="header navigation" />
+        <Navigation routes={routes} />
         <div className="hidden tablet:block">
           <PrimaryButton href="#">Get an Invite</PrimaryButton>
         </div>
