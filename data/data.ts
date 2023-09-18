@@ -5,8 +5,10 @@ import features from "./features";
 import pricing from "./pricing";
 import compare from "./compare";
 import banners from "./banners";
+import routes from "./routes";
 
 const data = {
+  routes: routes,
   heros: heros,
   promos: promos,
   stories: stories,
