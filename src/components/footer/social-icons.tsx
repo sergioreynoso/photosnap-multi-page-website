@@ -14,7 +14,7 @@ import InstagramColor from "@/public/social_media_icons/instagram_color.png";
 export default function SocialIcons() {
   return (
     <div className="flex gap-3">
-      <Link href="#" className="group relative h-5 w-5">
+      <Link href="#" className="group relative h-5 w-5" aria-label="Facebook">
         <Image
           src={FacebookWhite}
           alt="Facebook Logo"
@@ -26,7 +26,7 @@ export default function SocialIcons() {
           className="hidden group-hover:block"
         />
       </Link>
-      <Link href="#" className="group relative h-5 w-5">
+      <Link href="#" className="group relative h-5 w-5" aria-label="Youtube">
         <Image
           src={YoutubeWhite}
           alt="Youtube Logo"
@@ -38,7 +38,7 @@ export default function SocialIcons() {
           className="hidden group-hover:block"
         />
       </Link>
-      <Link href="#" className="group relative h-5 w-5">
+      <Link href="#" className="group relative h-5 w-5" aria-label="Twitter">
         <Image
           src={TwitterWhite}
           alt="Twitter Logo"
@@ -50,7 +50,7 @@ export default function SocialIcons() {
           className="hidden group-hover:block"
         />
       </Link>
-      <Link href="#" className="group relative h-5 w-5">
+      <Link href="#" className="group relative h-5 w-5" aria-label="Pinterest">
         <Image
           src={PinterestWhite}
           alt="Pinterest Logo"
@@ -62,7 +62,7 @@ export default function SocialIcons() {
           className="hidden group-hover:block"
         />
       </Link>
-      <Link href="#" className="group relative h-5 w-5">
+      <Link href="#" className="group relative h-5 w-5" aria-label="Instagram">
         <Image
           src={InstagramWhite}
           alt="Instagram Logo"
