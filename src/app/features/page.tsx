@@ -1,4 +1,4 @@
-import FeaturesGroup from "@components/layout-groups/product-features-group";
+import FeaturesGroup from "@/src/components/grids/product-features-grid";
 import Banner from "@components/cards/banner";
 import { FeaturesHeroCard } from "@components/features/features-hero-card";
 

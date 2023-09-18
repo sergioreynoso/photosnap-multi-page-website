@@ -1,5 +1,5 @@
 "use client";
-import StoriesGroup from "@components/layout-groups/stories-group";
+import StoriesGroup from "@/src/components/grids/stories-grid";
 import StoriesHeroCard from "@components/stories/stories-hero-card";
 
 export default function Stories() {

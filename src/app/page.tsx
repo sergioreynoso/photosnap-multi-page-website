@@ -1,6 +1,6 @@
-import FeaturesGroup from "@components/layout-groups/product-features-group";
-import PromoGroup from "@components/layout-groups/promo-group";
-import StoriesGroup from "@components/layout-groups/stories-group";
+import FeaturesGroup from "@/src/components/grids/product-features-grid";
+import PromoGroup from "@/src/components/grids/promo-grid";
+import StoriesGroup from "@/src/components/grids/stories-grid";
 import HomeHero from "@components/home/home-hero-card";
 
 export default async function Home() {
