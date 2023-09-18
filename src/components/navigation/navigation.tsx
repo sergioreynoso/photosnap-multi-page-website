@@ -1,9 +1,7 @@
 "use client";
 import useIsCurrentRoute from "@/src/lib/hooks/useIsCurrentRoute";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import Link from "next/link";
-import { useId } from "react";
 
 type Props = {
   routes: {
@@ -20,7 +18,6 @@ const defaultRoute = [
 ];
 
 const Navigation = ({ routes = defaultRoute }: Props) => {
-  const id = useId();
   return (
     <div className="hidden tablet:block">
       <NavigationMenu.Root className="-translate-x-[5px] text-xs font-bold uppercase">
