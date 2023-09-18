@@ -58,7 +58,7 @@ const navigationItemVarian: Variants = {
   },
 };
 
-export default function HeaderMobileNavigation() {
+export default function MobileNavigation() {
   const [open, setOpen] = React.useState(false);
   const handleMediaQueryChange = (matches: boolean) => open && setOpen(false);
   useMediaQuery({ minWidth: 768 }, undefined, handleMediaQueryChange);

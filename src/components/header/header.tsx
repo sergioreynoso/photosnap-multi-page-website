@@ -2,8 +2,8 @@
 import Logo from "@/public/logo/photosnap_logo_white.png";
 import Image from "next/image";
 import Link from "next/link";
-import HeaderMobileNavigation from "./header-mobile-navigation";
-import HeaderNavigation from "./header-navigation";
+import MobileNavigation from "@/src/components/navigation/mobile-navigation";
+import Navigation from "@/src/components/navigation/navigation";
 import PrimaryButton from "@components/buttons/primary-button";
 import useIsCurrentRoute from "@/src/lib/hooks/useIsCurrentRoute";
 
@@ -16,12 +16,12 @@ export default function Header() {
         <Link href="/" {...(isCurrentRoute ? { "aria-current": "page" } : {})}>
           <Image src={Logo} alt="logo" priority className="h-4 w-[170px]" />
         </Link>
-        <HeaderNavigation label="header navigation" />
+        <Navigation label="header navigation" />
         <div className="hidden tablet:block">
           <PrimaryButton href="#">Get an Invite</PrimaryButton>
         </div>
         <div className="tablet:hidden">
-          <HeaderMobileNavigation />
+          <MobileNavigation />
         </div>
       </div>
     </header>

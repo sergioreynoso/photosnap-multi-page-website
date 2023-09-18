@@ -9,22 +9,8 @@ type Props = {
   label: string;
 };
 
-const HeaderNavigation = ({ label }: Props) => {
+const Navigation = ({ label }: Props) => {
   const id = useId();
-
-  const Item = ({ route, label }: { route: string; label: string }) => {
-    const { isCurrentRoute } = useIsCurrentRoute(route);
-    return (
-      <NavigationMenu.Item>
-        <NavigationMenu.Link asChild active={isCurrentRoute}>
-          <Link href={route} className=" hover:opacity-30">
-            {label}
-          </Link>
-        </NavigationMenu.Link>
-      </NavigationMenu.Item>
-    );
-  };
-
   return (
     <div className="hidden tablet:block">
       <NavigationMenu.Root
@@ -43,4 +29,17 @@ const HeaderNavigation = ({ label }: Props) => {
   );
 };
 
-export default HeaderNavigation;
+const Item = ({ route, label }: { route: string; label: string }) => {
+  const { isCurrentRoute } = useIsCurrentRoute(route);
+  return (
+    <NavigationMenu.Item>
+      <NavigationMenu.Link asChild active={isCurrentRoute}>
+        <Link href={route} className=" hover:opacity-30">
+          {label}
+        </Link>
+      </NavigationMenu.Link>
+    </NavigationMenu.Item>
+  );
+};
+
+export default Navigation;
