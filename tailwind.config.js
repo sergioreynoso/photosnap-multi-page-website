@@ -51,46 +51,7 @@ module.exports = {
         "brand-accent":
           "linear-gradient(26deg, #FFC593 0.42%, #BC7198 43.46%, #5A77FF 83.33%);",
       },
-      keyframes: {
-        overlayShow: {
-          from: { opacity: 0 },
-          to: { opacity: 1 },
-        },
-        contentShow: {
-          from: { transform: "scaleY(0)" },
-          to: { transform: "scaleY(100%)" },
-        },
-        contentChildrenShow: {
-          from: { opacity: 0 },
-          to: { opacity: 1 },
-        },
-        rotateRight: {
-          from: { transform: "translate(50%,-2px) rotate(0deg)" },
-          to: { transform: "translate(50%,0) rotate(45deg)" },
-        },
-        rotateLeft: {
-          from: { transform: "translate(50%,2px) rotate(0deg)" },
-          to: { transform: "translate(50%,0) rotate(-45deg)" },
-        },
-        reverseRight: {
-          from: { transform: "translate(50%,0) rotate(45deg)" },
-          to: { transform: "translate(50%,-4px) rotate(0deg)" },
-        },
-        reverseLeft: {
-          from: { transform: "translate(50%,0) rotate(-45deg)" },
-          to: { transform: "translate(50%,4px) rotate(0deg)" },
-        },
-      },
-      animation: {
-        overlayShow: "overlayShow 150ms ease both",
-        contentShow: "contentShow 150ms 150ms ease-out both",
-        contentChildrenShow: "contentChildrenShow 150ms 300ms ease-out both",
-        rotateRight: "rotateRight 300ms ease both",
-        rotateLeft: "rotateLeft 300ms ease both",
-        reverseRight: "reverseRight 300ms ease both ",
-        reverseLeft: "reverseLeft 300ms ease both",
-      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/container-queries")],
 };

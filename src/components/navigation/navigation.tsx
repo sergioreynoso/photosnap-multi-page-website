@@ -4,7 +4,7 @@ import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import Link from "next/link";
 
 type Props = {
-  routes: {
+  routes?: {
     route: string;
     label: string;
   }[];
@@ -19,15 +19,13 @@ const defaultRoute = [
 
 const Navigation = ({ routes = defaultRoute }: Props) => {
   return (
-    <div className="hidden tablet:block">
-      <NavigationMenu.Root className="-translate-x-[5px] text-xs font-bold uppercase">
-        <NavigationMenu.List className="flex gap-9">
-          {routes.map(({ route, label }) => (
-            <Item key={route} route={route} label={label} />
-          ))}
-        </NavigationMenu.List>
-      </NavigationMenu.Root>
-    </div>
+    <NavigationMenu.Root className="w-full text-xs font-bold uppercase @container">
+      <NavigationMenu.List className="flex flex-col items-center justify-center gap-5 @[350px]:flex-row @[350px]:gap-9">
+        {routes.map(({ route, label }) => (
+          <Item key={route} route={route} label={label} />
+        ))}
+      </NavigationMenu.List>
+    </NavigationMenu.Root>
   );
 };
 
