@@ -13,7 +13,7 @@ import InstagramColor from "@/public/social_media_icons/instagram_color.png";
 
 export default function SocialIcons() {
   return (
-    <div className="flex gap-3">
+    <div className="flex justify-center gap-3">
       <Link href="#" className="group relative h-5 w-5" aria-label="Facebook">
         <Image
           src={FacebookWhite}
