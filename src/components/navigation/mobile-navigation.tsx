@@ -70,7 +70,7 @@ export default function MobileNavigation() {
       </Dialog.Trigger>
       <AnimatePresence mode="sync" initial={false}>
         {open && (
-          <Dialog.Portal forceMount style={{ backgroundColor: "red" }}>
+          <Dialog.Portal forceMount>
             <Dialog.Overlay
               className="fixed inset-0 top-[72px] bg-brand-black/50"
               asChild>
